@@ -16,7 +16,7 @@
         <section class="top-nav navbar navbar-expand-lg navbar-light bg-light py-0 px-5">
             <div class="d-flex p-3" style="align-items: center;">
                 <img src="../assets/img/olopsc logo.png" alt="" style="height: 35px;width: auto;">
-                <p class="navbar-brand text-primary mb-0 ml-3" href="#">OLOPSC RFID System: RFID</p>
+                <p class="navbar-brand text-primary mb-0 ml-3" href="#">OLOPSC RFID System</p>
             </div>
             <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -62,13 +62,13 @@
                         Students
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link nav-active d-flex px-0 pr-4" href="http://127.0.0.1:5500/pages/rfid.html">
+                <li class="nav-item">
+                    <a class="nav-link d-flex px-0 pr-4" href="http://127.0.0.1:5500/pages/rfid.html">
                         RFID Cards
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex px-0 pr-4" href="http://127.0.0.1:5500/pages/rfid.html">
+                    <a class="nav-link d-flex px-0 pr-4 nav-active" href="http://127.0.0.1:5500/pages/rfid.html">
                         Admin
                     </a>
                 </li>
@@ -124,13 +124,13 @@
                                             <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                <h5 class="modal-title">Delete this RFID?</h5>
+                                                <h5 class="modal-title">Delete this User?</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>Proceed to delete the selected RFID?</p>
+                                                    <p>Proceed to delete the selected User?</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -147,7 +147,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title text-primary" id="staticBackdropLabel">Add RFID</h5>
+              <h5 class="modal-title text-primary" id="staticBackdropLabel">Add User</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -155,8 +155,17 @@
             <div class="modal-body d-flex">
                 <form class="w-100">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="RFID">
+                        <input type="text" class="form-control" placeholder="Username">
                     </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="First Name">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Last Name">
+                      </div>
+                      <div class="form-group">
+                          <input type="email" class="form-control" placeholder="Email">
+                      </div>
                   </form>
             </div>
             <div class="modal-footer">
@@ -240,17 +249,19 @@
                 <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th scope="col">RFID</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Student</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Email</th>
                         <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr class="card-list">
-                        <th scope="row">123456789</th>
-                        <td>Medyo Active</td>
+                        <th scope="row">123</th>
+                        <td>mIPsum</td>
                         <td>Lorem Ipsum</td>
+                        <td>ipsum@gmail.com</td>
                         <!-- <td>Active</td> -->
                         <td class="mr-auto">
                             <div class="btn-group">
@@ -258,7 +269,7 @@
                                   <img src="../assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                  <!-- <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editStudent">Edit</a> -->
+                                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editStudent">Edit</a>
                                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deleteStudent">Delete</a>
                                 </div>
                               </div>
