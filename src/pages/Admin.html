@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>OLOPSC RFID System</title>
+    <title>OLOPSC RFID System: Admin</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/styles/main.css">
@@ -58,7 +58,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex px-0 pr-4 nav-active" href="http://127.0.0.1:5500/pages/dashboard.html">
+                    <a class="nav-link d-flex px-0 pr-4 " href="http://127.0.0.1:5500/pages/dashboard.html">
                         Students
                     </a>
                 </li>
@@ -68,7 +68,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex px-0 pr-4" href="http://127.0.0.1:5500/pages/rfid.html">
+                    <a class="nav-link d-flex px-0 pr-4 nav-active" href="http://127.0.0.1:5500/pages/rfid.html">
                         Admin
                     </a>
                 </li>
@@ -90,52 +90,24 @@
                                             <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title text-primary" id="staticBackdropLabel">Edit Student</h5>
+                                                    <h5 class="modal-title text-primary" id="staticBackdropLabel">Edit User</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                       <span aria-hidden="true">&times;</span>
                                                     </button>
                                                   </div>
                                                   <div class="modal-body d-flex">
                                                           <form class="w-100">
+                                                            <div class="form-group">
+                                                                <input type="text" class="form-control" placeholder="Username">
+                                                            </div>
                                                               <div class="form-group">
                                                                   <input type="text" class="form-control" placeholder="First Name">
                                                               </div>
                                                               <div class="form-group">
-                                                                  <input type="password" class="form-control" placeholder="Last Name">
+                                                                  <input type="text" class="form-control" placeholder="Last Name">
                                                               </div>
                                                               <div class="form-group">
-                                                                <select class="custom-select">
-                                                                    <option selected>Select course.</option>
-                                                                    <option value="1">BSIT</option>
-                                                                    <option value="2">ACT</option>
-                                                                    <option value="3">HRM</option>
-                                                                    <option value="4"></option>
-                                                                  </select>
-                                                              </div>
-                                                              <div class="form-group ">
-                                                                  <select class="custom-select">
-                                                                      <option selected>Year Level</option>
-                                                                      <option value="1">1st Year</option>
-                                                                      <option value="2">2nd Year</option>
-                                                                      <option value="3">3rd Year</option>
-                                                                      <option value="4">4th Year</option>
-                                                                    </select>
-                                                              </div>
-                                                              <div class="form-group ">
-                                                                  <select class="custom-select">
-                                                                      <option selected>Gender</option>
-                                                                      <option value="1">Male</option>
-                                                                      <option value="2">Female</option>
-                                                                    </select>
-                                                              </div>
-                                                              <div class="form-group">
-                                                                  <input type="date" class="form-control" placeholder="Email">
-                                                              </div>
-                                                              <div class="form-group">
-                                                                  <input type="password" class="form-control" placeholder="Address">
-                                                              </div>
-                                                              <div class="form-group">
-                                                                  <input type="password" class="form-control" placeholder="Email">
+                                                                  <input type="email" class="form-control" placeholder="Email">
                                                               </div>
                                                           </form>
                                                   </div>
@@ -152,13 +124,13 @@
                                             <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                <h5 class="modal-title">Delete this Student?</h5>
+                                                <h5 class="modal-title">Delete this User?</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>Proceed to delete the selected student?</p>
+                                                    <p>Proceed to delete the selected User?</p>
                                                 </div>
                                                 <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -175,48 +147,26 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title text-primary" id="staticBackdropLabel">Add Student</h5>
+              <h5 class="modal-title text-primary" id="staticBackdropLabel">Add User</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body d-flex">
-                    <form class="w-100">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="First Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Last Name">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Course">
-                        </div>
-                        <div class="form-group ">
-                            <select class="custom-select">
-                                <option selected>Year Level</option>
-                                <option value="1">1st Year</option>
-                                <option value="2">2nd Year</option>
-                                <option value="3">3rd Year</option>
-                                <option value="4">4th Year</option>
-                              </select>
-                        </div>
-                        <div class="form-group ">
-                            <select class="custom-select">
-                                <option selected>Gender</option>
-                                <option value="1">Male</option>
-                                <option value="2">Female</option>
-                              </select>
-                        </div>
-                        <div class="form-group">
-                            <input type="date" class="form-control" placeholder="Email">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Address">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Email">
-                        </div>
-                    </form>
+                <form class="w-100">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Username">
+                    </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="First Name">
+                      </div>
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Last Name">
+                      </div>
+                      <div class="form-group">
+                          <input type="email" class="form-control" placeholder="Email">
+                      </div>
+                  </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -300,26 +250,18 @@
                     <thead>
                       <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Course</th>
-                        <th scope="col">Yr Level</th>
-                        <th scope="col">Birthday</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Full Name</th>
                         <th scope="col">Email</th>
-
-                        <th scope="col">Contact</th>
-                        <!-- <th scope="col">Status</th> -->
                         <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr class="card-list">
-                        <th scope="row">1234567890</th>
-                        <td>Jil Muriel</td>
-                        <td>BSIT</td>
-                        <td>4th</td>
-                        <td>08/15/1996</td>
-                        <td>jilmuriel@gmail.com</td>
-                        <td>+69123456798</td>
+                        <th scope="row">123</th>
+                        <td>mIPsum</td>
+                        <td>Lorem Ipsum</td>
+                        <td>ipsum@gmail.com</td>
                         <!-- <td>Active</td> -->
                         <td class="mr-auto">
                             <div class="btn-group">
@@ -329,35 +271,11 @@
                                 <div class="dropdown-menu dropdown-menu-right">
                                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editStudent">Edit</a>
                                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deleteStudent">Delete</a>
-                                  <hr>
-                                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editStudent">Activate</a>
                                 </div>
                               </div>
                         </td>
                       </tr>
-                      <tr class="card-list">
-                        <th scope="row">1234567890</th>
-                        <td>Jil Muriel</td>
-                        <td>BSIT</td>
-                        <td>4th</td>
-                        <td>08/15/1996</td>
-                        <td>jilmuriel@gmail.com</td>
-                        <td>+69123456798</td>
-                        <!-- <td>Active</td> -->
-                        <td class="mr-auto">
-                            <div class="btn-group">
-                                <a type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <img src="../assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editStudent">Edit</a>
-                                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deleteStudent">Delete</a>
-                                  <hr>
-                                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editStudent">Activate</a>
-                                </div>
-                              </div>
-                        </td>
-                      </tr>
+                      
                     </tbody>
                   </table>
             </div>
