@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>OLOPSC RFID System</title>
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/styles/main.css">
-    
-
-</head>
-<body>
+<?php include('header.php'); ?>
             <div class="modal fade" id="aboutUs" tabindex="-1" role="dialog" aria-labelledby="aboutUsTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable" role="document">
                     <div class="modal-content">
@@ -59,66 +46,7 @@
                     </div>
                 </div>
             </div>
-    <nav class="nav-shadow fixed-top">
-        <section class="top-nav navbar navbar-expand-lg navbar-light bg-light py-0 px-5">
-            <div class="d-flex p-3" style="align-items: center;">
-                <img src="../assets/img/olopsc logo.png" alt="" style="height: 35px;width: auto;">
-                <p class="navbar-brand text-primary mb-0 ml-3" href="#">OLOPSC RFID System</p>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto d-flex align-items-center display-none">
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div style="height: 28px; width: 28px;background: #808D93; margin-right: 8px;border-radius: 50%;"></div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#aboutUs">About</a>
-                        <a class="dropdown-item" href="#">Account Settings</a>
-                        <a class="dropdown-item" href="#">Sign out</a>
-                    </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="navbar navbar-expand-lg navbar-light bg-light py-2" style="padding-right: 80px;padding-left: 80px;">
-            <ul class="navbar-nav mr-auto d-flex align-items-center">
-                <!-- <li class="nav-item">
-                    <a class="nav-link px-0 pr-4" href="#">
-                        Home
-                    </a>
-                </li> -->
-                <li class="nav-item">
-                    <a class="nav-link px-0 pr-4" href="http://127.0.0.1:5500/pages/calendar.html">
-                        Calendar
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link d-flex px-0 pr-4 nav-active" href="http://127.0.0.1:5500/pages/dashboard.html">
-                        Students
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link d-flex px-0 pr-4" href="http://127.0.0.1:5500/pages/rfid.html">
-                        RFID Cards
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link d-flex px-0 pr-4" href="http://127.0.0.1:5500/pages/rfid.html">
-                        Admin
-                    </a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto d-flex align-items-center">
-                <li class="nav-item">
-                    <label class="search-section" for="search">
-                        <img src="../assets/img/search-icon.png" class="search-icon" alt="search icon">
-                        <input type="text" id="search" class="input-search" placeholder="Search...">
-                    </label>
-                    
-                </li>
-            </ul>
-        </section>
-    </nav>
+            <?php include('nav.php'); ?>
                                         <!-- Modal for Editing student -->
                                         <!-- Modal -->
                                         <div class="modal fade" id="editStudent" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -387,7 +315,7 @@
                         <td class="mr-auto">
                             <div class="btn-group">
                                 <a type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <img src="../assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
+                                  <img src="assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editStudent">Edit</a>
@@ -410,7 +338,7 @@
                         <td class="mr-auto">
                             <div class="btn-group">
                                 <a type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <img src="../assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
+                                  <img src="assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editStudent">Edit</a>
@@ -428,14 +356,11 @@
 
     <div class="addStudent" style="position: fixed;bottom:0;right: 0; margin-bottom:50px;margin-right:50px;">
         <button class="add-btn" data-toggle="modal" data-target="#addStudent">
-            <img  class="plus-icon" src="../assets/img/plus-icon.png" alt="">
+            <img  class="plus-icon" src="assets/img/plus-icon.png" alt="">
         </button>
     </div>
 
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
-</html>
+
+    <?php include('footer.php'); ?>
