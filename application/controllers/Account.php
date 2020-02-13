@@ -21,6 +21,30 @@ class Account extends CI_Controller {
 	public function index()
 	{
 
+		if(!$this->session->has_userdata('username')){
+			redirect('/login');
+		}
+		
+		$data['user'] = array();
+
+		if(isset($_SESSION['username'])){
+			//$this->load->model('users_model');
+			//$result = $this->users_model->getUserByUsername($this->session->userdata('username'));
+			$data['username'] = $this->session->userdata('username') != "" ? $this->session->userdata('username') : "";
+			$data['password'] = $this->session->userdata('password')!= "" ? $this->session->userdata('password') : "";
+			$data['firstname'] = $this->session->userdata('firstname') != "" ? $this->session->userdata('firstname') : "";
+			$data['middlename'] = $this->session->userdata('middlename') != "" ?$this->session->userdata('middlename') : "";
+			$data['lastname'] = $this->session->userdata('lastname')  != "" ? $this->session->userdata('lastname') : "";
+			$data['course'] = $this->session->userdata('course') != "" ? $this->session->userdata('course') : "";
+			$data['ordinal_year'] =$this->session->userdata('ordinal_year') != "" ? $this->session->userdata('ordinal_year') : "";
+			$data['semester'] =$this->session->userdata('semester') != "" ? $this->session->userdata('semester') : "";
+			$data['id_image'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "";
+			$data['ref_rfid'] = $this->session->userdata('ref_rfid') != "" ? $this->session->userdata('ref_rfid') : "";
+			$data['isadmin'] = $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+			$data['email'] = $this->session->userdata('email') != "" ? $this->session->userdata('email') : "";
+
+		}
+
 		$data['header'] = $this->load->view('header', NULL, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
 		$this->load->view('account_view',$data);

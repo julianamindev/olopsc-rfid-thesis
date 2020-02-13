@@ -11,10 +11,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/styles/main.css">
-    <link rel="stylesheet" href="assets/styles/styles.css">
-    <link rel="stylesheet" href="assets/styles/core/core.css">
-    <link rel="stylesheet" href="assets/styles/daygrid/daygrid.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/main.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/styles.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/core/core.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/daygrid/daygrid.css">
 
 </head>
 <body>

@@ -20,10 +20,46 @@ class Login extends CI_Controller {
 	 */
 	public function index()
 	{
+		if($this->session->has_userdata('username')){
+			redirect('/dashboard');
+		}
 
+		//
+		//print_r($this->users_model->getAllUser());
+
+        $data['error'] = "";
 		$data['header'] = $this->load->view('header', NULL, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
 		$this->load->view('login_view',$data);
 
 	}
+
+
+	public function validate()
+	{
+		$this->load->model('users_model');
+		$date['error'] = "";
+		$data['header'] = $this->load->view('header', NULL, TRUE);
+		$data['footer'] = $this->load->view('footer', NULL, TRUE);
+
+		if(isset($_POST['submit'])){
+		
+			$result = $this->users_model->validateUser($this->input->post());
+			if(count($result)){
+				$this->session->set_userdata($result);
+				redirect('/dashboard');
+			}
+
+			$data['error'] = "Invalid username or password!";
+			
+		}else{
+			$data['error'] = "Invalid username or password!";
+
+		}
+
+		$this->load->view('login_view',$data);
+		
+
+	}
+
 }

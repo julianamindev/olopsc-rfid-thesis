@@ -20,6 +20,10 @@ class Calendar extends CI_Controller {
 	 */
 	public function index()
 	{
+		if(!$this->session->has_userdata('username')){
+			redirect('/login');
+		}
+
 
 		$data['header'] = $this->load->view('header', NULL, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
