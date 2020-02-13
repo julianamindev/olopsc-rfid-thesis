@@ -24,8 +24,8 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#aboutUs">About</a>
-                        <a class="dropdown-item" href="#">Account Settings</a>
-                        <a class="dropdown-item" href="#">Sign out</a>
+                        <a class="dropdown-item" href="account">Account Settings</a>
+                        <a class="dropdown-item" href="logout">Sign out</a>
                     </div>
                     </li>
                 </ul>
@@ -39,22 +39,22 @@
                     </a>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link px-0 pr-4 nav-active" href="calendar.php">
+                    <a class="nav-link px-0 pr-4 " href="calendar">
                         Calendar
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex px-0 pr-4 " href="dashboard.php">
+                    <a class="nav-link d-flex px-0 pr-4" href="dashboard">
                         Students
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex px-0 pr-4 " href="rfid.php">
+                    <a class="nav-link d-flex px-0 pr-4 " href="rfid">
                         RFID Cards
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex px-0 pr-4" href="rfid.php">
+                    <a class="nav-link d-flex px-0 pr-4" href="admin">
                         Admin
                     </a>
                 </li>
