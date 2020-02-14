@@ -7,6 +7,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="<?php echo base_url();?>assets/styles/core/main.js"></script>
 <script src="<?php echo base_url();?>assets/styles/daygrid/main.js"></script> 
 
-
 </body>
 </html>

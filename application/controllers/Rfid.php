@@ -25,10 +25,54 @@ class Rfid extends CI_Controller {
 			redirect('/login');
 		}
 
+		$data['msg'] = "";
+		$data['page'] = "rfid";
+		$this->load->model('rfid_model');
+		$result = $this->rfid_model->getAllRfid();
+		$data['rfid'] = $result;
 
-		$data['header'] = $this->load->view('header', NULL, TRUE);
+		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
 		$this->load->view('rfid_view',$data);
 
 	}
+
+	public function add()
+	{
+
+		if(!$this->session->has_userdata('username')){
+			redirect('/login');
+		}
+
+		$this->load->model('rfid_model');
+		$data['msg'] = "";
+		$data['page'] = "rfid";
+
+		if(isset($_POST['submit'])){
+
+			$formdata =array();
+			$formdata['rfid_number'] = $this->input->post('rfid_number');
+			$formdata['status']  = 0;
+			$result = $this->rfid_model->addRfid($formdata);
+
+			if($result){
+				$data['msg'] = "<span style='color:#4c9447'>Rfid successfully added!</span>";
+			}else{
+				$data['msg'] = "<span style='color:red'>Error! Rfid cannot be save!</span>";
+			}	
+				
+		}
+
+		$this->load->model('rfid_model');
+		$result = $this->rfid_model->getAllRfid();
+		$data['rfid'] = $result;
+
+
+		$data['header'] = $this->load->view('header', $data, TRUE);
+		$data['footer'] = $this->load->view('footer', NULL, TRUE);
+		$this->load->view('rfid_view',$data);
+
+	}
+
+
 }

@@ -23,9 +23,9 @@ class Calendar extends CI_Controller {
 		if(!$this->session->has_userdata('username')){
 			redirect('/login');
 		}
+		$data['page'] = "calendar";
 
-
-		$data['header'] = $this->load->view('header', NULL, TRUE);
+		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
 		$this->load->view('calendar_view',$data);
 

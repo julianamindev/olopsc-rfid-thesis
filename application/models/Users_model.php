@@ -29,5 +29,45 @@ class Users_model extends CI_Model {
                 return $query->row_array();
         }
 
+        public function getUserAdmin()
+        {   
+                $id = 1;
+                $this->db->where('isadmin', $id);
+                $query = $this->db->get('user');
+                return $query->result_array();
+        }
+
+        public function getUserStudent()
+        {   
+                $id = 1;
+                $this->db->where('isadmin !=',  $id);
+                $query = $this->db->get('user');
+                return $query->result_array();
+        }
+
+
+        public function addAdmin($data)
+        {   
+
+                if($this->checkUsernameAdmin($data['username']) > 0){
+                        return false;
+                }else{
+                        $result = $this->db->insert('user',$data);
+                        return  $result ? true : false ;  
+                }
+
+               
+        }
+
+
+        public function checkUsernameAdmin($data)
+        {   
+                $this->db->where('username',  $data);
+                $query = $this->db->get('user');
+                return $query->num_rows();
+        }
+
+
+
 
 }

@@ -27,8 +27,9 @@ class Login extends CI_Controller {
 		//
 		//print_r($this->users_model->getAllUser());
 
-        $data['error'] = "";
-		$data['header'] = $this->load->view('header', NULL, TRUE);
+		$data['error'] = "";
+		$data['page'] = "login";
+		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
 		$this->load->view('login_view',$data);
 
@@ -38,8 +39,9 @@ class Login extends CI_Controller {
 	public function validate()
 	{
 		$this->load->model('users_model');
-		$date['error'] = "";
-		$data['header'] = $this->load->view('header', NULL, TRUE);
+		$data['error'] = "";
+		$data['page'] = "login";
+		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
 
 		if(isset($_POST['submit'])){

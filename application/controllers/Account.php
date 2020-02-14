@@ -26,6 +26,7 @@ class Account extends CI_Controller {
 		}
 		
 		$data['user'] = array();
+		$data['page'] = "account";
 
 		if(isset($_SESSION['username'])){
 			//$this->load->model('users_model');
@@ -45,7 +46,7 @@ class Account extends CI_Controller {
 
 		}
 
-		$data['header'] = $this->load->view('header', NULL, TRUE);
+		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
 		$this->load->view('account_view',$data);
 

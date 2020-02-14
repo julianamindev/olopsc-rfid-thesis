@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Password" required name="password">
                 </div>
-                <a href="forgot" class="ps-link"><small>Forgot your password?</small></a>
+                <!--a href="forgot" class="ps-link"><small>Forgot your password?</small></a-->
                 <button type="submit" class="btn btn-primary w-100 mt-4" name="submit">Login</button>
            <?php echo form_close();?>
         </div>

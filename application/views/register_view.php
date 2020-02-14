@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <main class="login-container">
         <nav class="fixed-top d-flex p-3" style="align-items: center;">
-            <img src="assets/img/olopsc logo.png" alt="" style="height: 60px;width: auto;">
+            <img src="<?php echo base_url()?>assets/img/olopsc logo.png" alt="" style="height: 60px;width: auto;">
             <p class="navbar-brand text-primary mb-0 ml-3" href="#">OLOPSC RFID System</p>
         </nav>
         <div class="card register-card">

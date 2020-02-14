@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <?php echo $header; ?>
 <?php include('about-us.php'); ?>
-        <?php include('nav.php'); ?>
 
     <div class="dashboard-container mx-auto mb-5">
         <!-- <div class=" search-bar my-5 ">
