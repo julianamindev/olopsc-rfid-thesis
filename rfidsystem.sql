@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 13, 2020 at 07:40 AM
+-- Generation Time: Feb 14, 2020 at 10:58 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.0.33
 
@@ -33,15 +33,18 @@ CREATE TABLE IF NOT EXISTS `course` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `course`
 --
 
 INSERT INTO `course` (`id`, `name`) VALUES
-(1, 'BS-IT'),
-(2, 'BS-HRM');
+(1, 'Education'),
+(2, 'Hotel and Restaurant Manager'),
+(5, 'Computer Science'),
+(6, 'Tourism'),
+(7, 'Business Administration');
 
 -- --------------------------------------------------------
 
@@ -62,7 +65,18 @@ CREATE TABLE IF NOT EXISTS `rfid` (
 INSERT INTO `rfid` (`rfid_number`, `status`) VALUES
 ('123321123', 1),
 ('543452321', 1),
-('123432123', 1);
+('123432123', 1),
+('567564646456', 1),
+('879879789789', 1),
+('24235434345', 1),
+('1111', 1),
+('22222', 1),
+('5555', 1),
+('7777', 1),
+('9999999', 0),
+('13123123', 1),
+('224324324', 0),
+('435345435', 0);
 
 -- --------------------------------------------------------
 
@@ -102,23 +116,43 @@ CREATE TABLE IF NOT EXISTS `user` (
   `middlename` varchar(255) DEFAULT NULL,
   `lastname` varchar(255) DEFAULT NULL,
   `course` int(11) DEFAULT NULL,
-  `ordinal_year` int(11) DEFAULT NULL,
+  `ordinal_year` varchar(255) DEFAULT NULL,
   `semester` varchar(255) DEFAULT NULL,
   `id_image` varchar(255) DEFAULT NULL,
   `ref_rfid` varchar(255) DEFAULT NULL,
   `isadmin` tinyint(1) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `student_no` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `firstname`, `middlename`, `lastname`, `course`, `ordinal_year`, `semester`, `id_image`, `ref_rfid`, `isadmin`) VALUES
-(1, 'dremoroza', '123321', 'Darrel', 'Lazado', 'Remoroza', 1, 1, '2nd', 'sample.jpg', NULL, 1),
-(2, 'vboniol', '123321', 'Vigil', 'B', 'Boniol', NULL, NULL, NULL, NULL, NULL, 0),
-(3, 'jamin', '123321', 'Julian', 'A', 'Amin', NULL, NULL, NULL, NULL, NULL, 0),
-(4, 'jsins', '123321', 'Johny', 'A', 'Sins', NULL, NULL, NULL, NULL, NULL, 0);
+INSERT INTO `user` (`id`, `username`, `password`, `firstname`, `middlename`, `lastname`, `course`, `ordinal_year`, `semester`, `id_image`, `ref_rfid`, `isadmin`, `email`, `student_no`) VALUES
+(1, 'dremoroza', '123321', 'Darrel', 'Lazado', 'Remoroza', NULL, '', '', 'sample.jpg', '', 1, 'dremoroza@gmail.com', ''),
+(2, 'vboniol', '123321', 'Vigil', 'B', 'Boniol', 1, '4th', NULL, NULL, '123321123', 0, 'dremoroza@gmail.com', '21312312321'),
+(3, 'jamin', '123321', 'Julian', 'A', 'Amin', 2, '4th', NULL, NULL, '543452321', 0, 'dremoroza@gmail.com', '657455345'),
+(4, 'jsins', '123321', 'Johny', 'A', 'Sins', 5, '3rd', NULL, NULL, '123432123', 0, 'dremoroza@gmail.com', '123213'),
+(5, 'mtaylor', '123321', 'Maui', 'A', 'Sins', 1, '2nd', '1', NULL, NULL, 0, 'dremoroza@gmail.com', '98989899'),
+(6, 'dremoroza2', '123321', 'Darrel', 'Lazado', 'Remoroza', NULL, '', '2nd', 'sample.jpg', '', 1, 'dremoroza@gmail.com', NULL),
+(7, 'dremoroza3', '123321', 'Darrel', 'Lazado', 'Remoroza', NULL, '', '2nd', 'sample.jpg', '', 1, 'dremoroza@gmail.com', NULL),
+(8, 'dremoroza4', '123321', 'Darrel', 'Lazado', 'Remoroza', NULL, '', '2nd', 'sample.jpg', '', 1, 'dremoroza@gmail.com', NULL),
+(9, 'assunta', '123321', 'Maui', 'A', 'Sins', 6, '1st', '1', NULL, NULL, 0, 'dremoroza@gmail.com', '777777777'),
+(10, 'richard', '123321', 'Vigil', 'B', 'Boniol', 7, '2nd', NULL, NULL, '', 0, 'dremoroza@gmail.com', '555555555'),
+(11, 'dremoroza4', '123321', 'Darrel', 'Lazado', 'Remoroza', NULL, '', '2nd', 'sample.jpg', '', 1, 'dremoroza@gmail.com', NULL),
+(13, NULL, NULL, 'dd', 'asd', 'sad', 1, '1st Year', NULL, NULL, '567564646456', 0, NULL, '1111111'),
+(14, 'ohndoe', '222222', 'john', 'dsad', 'doe', 1, '1st Year', NULL, NULL, '879879789789', 0, NULL, '222222'),
+(15, 'rlucas', '676767', 'rachel', 'b', 'lucas', 2, '1st Year', NULL, NULL, '1111', 0, NULL, '676767'),
+(16, 'cferrendo', '121212', 'chris', 's', 'ferrendo', 2, '1st Year', NULL, NULL, '24235434345', 0, NULL, '121212'),
+(17, 'sdfsdfs', '24234234', 'sdfsd', 'fsdfs', 'dfsdfs', 2, '1st Year', NULL, NULL, '22222', 0, NULL, '24234234'),
+(18, 'dgdgd', '45435', 'dgd', 'gdgfd', 'gdgd', 1, '1st Year', NULL, NULL, '5555', 0, NULL, '45435'),
+(19, 'dasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL),
+(20, 'sadsad', 'asdsad', 'sadsad', 'asdsa', 'dasd', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL),
+(21, 'sasdasd', '4243423432', 'sdsad', 'dasdas', 'asdasd', 1, '1st Year', NULL, NULL, '7777', 0, NULL, '4243423432'),
+(22, 'dddd', 'dsadsad', 'sadsad', 'sadsad', 'asdsad', NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL),
+(23, 'rduterte', '999999', 'rodrigo', 'r', 'duterte', 1, '1st Year', NULL, NULL, '13123123', 0, NULL, '999999');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
