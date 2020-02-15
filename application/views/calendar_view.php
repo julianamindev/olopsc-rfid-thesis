@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div id='calendar'></div>
                 </div>
             </div>
-            <div class="w-100 text-center">
+            <div id="log" class="w-100 text-center">
                 <h5 class="mt-3">TIME LOG</h5>
                 <div class="d-flex">
                     <ul class="list-group rounded-0 text-center w-100">
@@ -52,14 +52,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <?php echo $footer;?>
     
  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var calendarEl = document.getElementById('calendar');
+  $('#log').hide()
+document.addEventListener('DOMContentLoaded', function() {
+  var calendarEl = document.getElementById('calendar');
 
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        plugins: [ 'dayGrid' ]
-      });
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    plugins: [ 'dayGrid' ],
+    eventClick: function(info) {
+      var eventObj = info.event;
+        $('#log').show()
+    },
+    defaultDate: '2020-02-15',
+    events: [
+      {
+        title: 'Absent',
+        start: '2020-02-14'
+      },
+      {
+        title: 'Present',
+        start: '2020-02-15'
+      }
+    ]
+  });
 
-      calendar.render();    
-    });
-
+  calendar.render();
+});
+    
   </script>

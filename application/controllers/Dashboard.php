@@ -95,8 +95,6 @@ class Dashboard extends CI_Controller {
 
 		
 
-	
-
 
 		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
