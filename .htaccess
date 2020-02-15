@@ -3,7 +3,6 @@ DirectoryIndex index.php
 <IfModule mod_rewrite.c>
 
   RewriteEngine on
-  RewriteBase /thesis
   RewriteCond $1 !^(index\.php|resources|gallery|json|slider|robots\.txt)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d 
