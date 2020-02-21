@@ -27,6 +27,8 @@ class Rfid extends CI_Controller {
 
 		$data['msg'] = "";
 		$data['page'] = "rfid";
+		$data['search_url'] = "calendar/search";
+		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
 		$this->load->model('rfid_model');
 		$result = $this->rfid_model->getAllRfid();
 		$data['rfid'] = $result;
@@ -47,6 +49,8 @@ class Rfid extends CI_Controller {
 		$this->load->model('rfid_model');
 		$data['msg'] = "";
 		$data['page'] = "rfid";
+		$data['search_url'] = "calendar/search";
+		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
 
 		if(isset($_POST['submit'])){
 
@@ -71,6 +75,46 @@ class Rfid extends CI_Controller {
 		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
 		$this->load->view('rfid_view',$data);
+
+	}
+
+
+	public function delete()
+	{
+
+		if(!$this->session->has_userdata('username')){
+			redirect('/login');
+		}
+
+		$this->load->model('rfid_model');
+		$data['msg'] = "";
+		$data['page'] = "rfid";
+		$data['search_url'] = "calendar/search";
+		$rfid_id = $this->uri->segment(3, 0);
+		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$result = $this->rfid_model->getRfidByNo($rfid_id);	
+
+
+		if(isset($_POST['submit'])){
+
+			$ref_rfid = $this->input->post('rfid_number');
+			$result = $this->rfid_model->deleteRfidByNo($ref_rfid);
+
+			if($result){
+				$data['msg'] = "<span style='color:#4c9447'>Rfid successfully added!</span>";
+				redirect('/rfid');
+			}else{
+				$data['msg'] = "<span style='color:red'>Error! Rfid cannot be deleted!</span>";
+			}	
+				
+		}
+
+		$data['rfid_number'] = ($result != "") ? $result['rfid_number'] : "";
+	
+
+		$data['header'] = $this->load->view('header', $data, TRUE);
+		$data['footer'] = $this->load->view('footer', NULL, TRUE);
+		$this->load->view('rfid_delete',$data);
 
 	}
 

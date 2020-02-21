@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </button>
             </div>
             <div class="modal-body d-flex">
-            <?php echo form_open('admin/add','id="adminform" class="w-100"');?>
+            <?php echo form_open_multipart('admin/add','id="adminform" class="w-100"');?>
                     <div class="form-group">
                             <input type="text" class="form-control" placeholder="Username" name="username" required>
                         </div>
@@ -28,16 +28,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <input type="text" class="form-control" placeholder="First Name" name="firstname" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Middle Name" name="middlename" required>
+                            <input type="text" class="form-control" placeholder="Middle Name" name="middlename" required>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Last Name" name="lastname" required>
+                            <input type="text" class="form-control" placeholder="Last Name" name="lastname" required>
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleFormControlFile1">Profile Picture</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="id_image" required>
-                        </div>
+
                  
             </div>
             <div class="modal-footer">
@@ -76,11 +73,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <td class="mr-auto">
                             <div class="btn-group">
                                 <a type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <img src="assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
+                                  <img src="<?php echo base_url();?>assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editStudent">Edit</a>
-                                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deleteStudent">Delete</a>
+                                  <a class="dropdown-item" href="<?php echo base_url();?>admin/edit/<?php echo $adm['id'];?>" >Edit</a>
+                                  <a class="dropdown-item" href="<?php echo base_url();?>admin/delete/<?php echo $adm['id'];?>">Delete</a>
                                 </div>
                               </div>
                         </td>

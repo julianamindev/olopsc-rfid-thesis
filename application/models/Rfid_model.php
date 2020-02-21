@@ -20,6 +20,48 @@ class Rfid_model extends CI_Model {
                 return $query->result_array();
         }
 
+
+        public function getRfidByNo($data)
+        {
+                $this->db->where('rfid_number',  $data);
+                $query = $this->db->get('rfid');
+                return $query->row_array();
+
+        }
+
+
+        public function deleteRfidByNo($id)
+        {
+                if($this->checkRfidExist($id) > 0 && $this->checkRfidExistInUser($id) ){
+                        
+                        $this->db->where('rfid_number', $id);
+                        $this->db->delete('rfid');
+
+                        return true;         
+
+                }else{
+                        return false;
+                }
+
+
+        }
+
+
+        
+        public function checkRfidExistInUser($id)
+        {
+                $this->db->where('ref_rfid',  $id);
+                $query = $this->db->get('user');
+               
+                if($query->num_rows() > 0){
+                        return false;
+                }
+
+                return true;
+
+        }
+
+
         public function addRfid($data)
         {   
 
@@ -32,6 +74,9 @@ class Rfid_model extends CI_Model {
 
                
         }
+
+
+
 
 
         public function checkRfidExist($data)

@@ -27,6 +27,7 @@ class Student extends CI_Controller {
 		
 		$data['user'] = array();
 		$data['page'] = "account";
+		$data['search_url'] = "calendar/search";
 
 		if(isset($_SESSION['username'])){
 			//$this->load->model('users_model');

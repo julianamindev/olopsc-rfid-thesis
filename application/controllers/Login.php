@@ -49,7 +49,21 @@ class Login extends CI_Controller {
 			$result = $this->users_model->validateUser($this->input->post());
 			if(count($result)){
 				$this->session->set_userdata($result);
-				redirect('/dashboard');
+				
+				if($result['isadmin'] > 0){
+					redirect('/dashboard');
+				}else{
+
+					
+					$data['s-name'] = $result['firstname']." ".$result['middlename']." ".$result['lastname'];
+					$data['s-student_no'] = $result['student_no'];
+					$data['s-course'] = $result['name'];
+					$data['s-id_image'] = $result['id_image'];
+					$this->session->set_userdata($data);
+					redirect('/calendar');
+				}
+
+				
 			}
 
 			$data['error'] = "Invalid username or password!";

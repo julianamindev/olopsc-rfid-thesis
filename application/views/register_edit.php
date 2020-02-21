@@ -29,18 +29,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="form-group">
                             <label for="fname">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password"  name="password" value="<?php echo $password;?>" readonly>
+                            <input type="password" class="form-control" id="password" placeholder="Password"  name="password" value="<?php echo $password;?>">
                         </div>
-                     
-                            <div class="form-group">
-                                <label for="fname">New password</label>
-                                <input type="password" class="form-control" id="firstname" placeholder="New Password" >
-                            </div>
-                        
-                            <div class="form-group">
-                                <label for="fname">Confirm New password</label>
-                                <input type="password" class="form-control" id="firstname" placeholder="Confirm New Password" >
-                            </div>
+
                         <hr>
                         <div class="form-group">
                             <div class="form-group">
@@ -59,12 +50,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <label for="fname">Email</label>
                                 <input type="text" class="form-control" id="fname" placeholder="First Name" value="<?php echo $email;?>">
                             </div-->
-                            <?php if($isadmin > 0){?>
                             <div class="form-group  mb-5">
                                 <label for="exampleFormControlFile1">Profile Picture</label>
                                 <input type="file" class="form-control-file" id="id_image" name="id_image" required>
                             </div>
-                            <?php }?>
                             <input type="submit" value="Save Changes" name="submit" class="btn btn-primary">
                         </div>
                     </form>

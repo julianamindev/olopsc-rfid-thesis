@@ -15,9 +15,13 @@ class Users_model extends CI_Model {
 
         public function validateUser($data)
         {   
+
+                $this->db->select('user.*,course.name');
+                $this->db->from('user');
+                $this->db->join('course', 'user.course = course.id','left');
                 $this->db->where('username', $data['username']);
                 $this->db->where('password',$data['password']);
-                $query = $this->db->get('user');
+                $query = $this->db->get();
                 return $query->row_array();
         }
 
@@ -25,6 +29,13 @@ class Users_model extends CI_Model {
         public function getUserByUsername($data)
         {   
                 $this->db->where('username', $data);
+                $query = $this->db->get('user');
+                return $query->row_array();
+        }
+
+        public function getUserById($data)
+        {   
+                $this->db->where('id', $data);
                 $query = $this->db->get('user');
                 return $query->row_array();
         }
@@ -59,10 +70,52 @@ class Users_model extends CI_Model {
                
         }
 
+        public function updateAdmin($id,$data)
+        {   
+                if($this->checkUserId($id) > 0){
+                        
+                        $this->db->where('id', $id);
+                        $this->db->update('user', $data);
+
+                        return true;         
+
+                }else{
+                        return false;
+                }
+
+               
+        }
+
+
+        public function deleteAdmin($id)
+        {   
+                if($this->checkUserId($id) > 0){
+                        
+                        $this->db->where('id', $id);
+                        $this->db->delete('user');
+
+                        return true;         
+
+                }else{
+                        return false;
+                }
+
+               
+        }
+
 
         public function checkUsernameAdmin($data)
         {   
                 $this->db->where('username',  $data);
+                $query = $this->db->get('user');
+                return $query->num_rows();
+        }
+
+
+        
+        public function checkUserId($data)
+        {   
+                $this->db->where('id',  $data);
                 $query = $this->db->get('user');
                 return $query->num_rows();
         }

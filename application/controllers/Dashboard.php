@@ -36,6 +36,8 @@ class Dashboard extends CI_Controller {
 		$data['rfid'] = $result3;
 		$data['msg'] = "";
 		$data['page'] = "dashboard";
+		$data['search_url'] = "calendar/search";
+		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
 
 		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
@@ -54,6 +56,8 @@ class Dashboard extends CI_Controller {
 		$this->load->model('rfid_model');
 		$data['msg'] = "";
 		$data['page'] = "dashboard";
+		$data['search_url'] = "calendar/search";
+		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
 
 		if(isset($_POST['submit'])){
 
@@ -67,6 +71,7 @@ class Dashboard extends CI_Controller {
 			$formdata['course'] = $this->input->post('course');
 			$formdata['ordinal_year'] = $this->input->post('ordinal_year');
 			$formdata['ref_rfid'] = $this->input->post('rfid_number');
+			$formdata['id_image'] = $this->do_upload();
 			$formdata['isadmin'] = 0;
 			$result = $this->student_model->addStudent($formdata);
 
@@ -101,6 +106,195 @@ class Dashboard extends CI_Controller {
 		$this->load->view('dashboard_view',$data);
 
 	}
+
+
+
+	public function edit()
+	{
+
+		if(!$this->session->has_userdata('username')){
+			redirect('/login');
+		}
+		$this->load->model('student_model');
+		$this->load->model('course_model');
+		$this->load->model('rfid_model');
+		$data['msg'] = "";
+		$data['page'] = "dashboard";
+		$data['search_url'] = "calendar/search";
+		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$user_id = $this->uri->segment(3, 0);
+
+		$data['form'] = $this->student_model->getStudentById($user_id);	
+
+		if(isset($_POST['submit'])){
+
+			$formdata =array();
+			$formdata['firstname'] = $this->input->post('firstname');
+			$formdata['middlename'] = $this->input->post('middlename');
+			$formdata['lastname'] = $this->input->post('lastname');
+			$formdata['course'] = $this->input->post('course');
+			$formdata['ordinal_year'] = $this->input->post('ordinal_year');
+			$result = $this->student_model->updateStudent($this->input->post('id'),$formdata);
+			$data['form'] = $this->student_model->getStudentById($this->input->post('id'));	
+			//print_r($result);exit();
+
+			if($result){
+
+				$data['msg'] = "<span style='color:#4c9447'>Student successfully edited!</span>";
+
+			}else{
+			    $data['msg'] = "<span style='color:red'>Error, Student cannot be save!</span>";
+			}	
+				
+		}
+
+		$this->load->model('student_model');
+		$this->load->model('course_model');
+		$this->load->model('rfid_model');
+		$result2 = $this->course_model->getAllCourse();
+		$result3 = $this->rfid_model->getAllRfidInactive();
+		$data['course'] = $result2;
+		$data['rfid'] = $result3;
+
+	
+	
+		$data['header'] = $this->load->view('header', $data, TRUE);
+		$data['footer'] = $this->load->view('footer', NULL, TRUE);
+
+		$this->load->view('dashboard_edit',$data);
+
+	}
+
+
+	public function delete()
+	{
+
+	
+		if(!$this->session->has_userdata('username')){
+			redirect('/login');
+		}
+		$this->load->model('student_model');
+		$this->load->model('course_model');
+		$this->load->model('rfid_model');
+		$data['msg'] = "";
+		$data['page'] = "dashboard";
+		$data['search_url'] = "calendar/search";
+		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$user_id = $this->uri->segment(3, 0);
+
+		$data['form'] = $this->student_model->getStudentById($user_id);	
+
+		if(isset($_POST['submit'])){
+
+			$formdata =array();
+			$id = $this->input->post('id');
+			$ref_rfid = $this->input->post('ref_rfid');
+			$result = $this->student_model->deleteStudent($id,$ref_rfid);
+
+			if($result){
+
+				$data['msg'] = "<span style='color:#4c9447'>Administrator successfully deleted!</span>";
+				redirect('/dashboard');
+
+			}else{
+			    $data['msg'] = "<span style='color:red'>Error, Administrator cannot be delete!</span>";
+			}	
+				
+				
+		}
+
+		$this->load->model('student_model');
+		$this->load->model('course_model');
+		$this->load->model('rfid_model');
+		$result2 = $this->course_model->getAllCourse();
+		$result3 = $this->rfid_model->getAllRfidInactive();
+		$data['course'] = $result2;
+		$data['rfid'] = $result3;
+
+	
+	
+		$data['header'] = $this->load->view('header', $data, TRUE);
+		$data['footer'] = $this->load->view('footer', NULL, TRUE);
+
+		$this->load->view('dashboard_delete',$data);
+
+	}
+
+
+	public function restore()
+	{
+
+	
+		if(!$this->session->has_userdata('username')){
+			redirect('/login');
+		}
+		$this->load->model('student_model');
+		$this->load->model('course_model');
+		$this->load->model('rfid_model');
+		$data['msg'] = "";
+		$data['page'] = "dashboard";
+		$data['search_url'] = "calendar/search";
+		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$user_id = $this->uri->segment(3, 0);
+
+		$data['form'] = $this->student_model->getStudentById($user_id);	
+
+		if(isset($_POST['submit'])){
+
+			$formdata['password'] = $this->input->post('student_no');
+			$result = $this->student_model->updateStudentPassword($this->input->post('student_no'),$formdata);
+
+			if($result){
+
+				$data['msg'] = "<span style='color:#4c9447'>Password successfully restore.</span>";
+				$data['form'] = $this->student_model->getStudentById($this->input->post('id'));	
+
+			}else{
+			    $data['msg'] = "<span style='color:red'>Error, password cannot be restore.</span>";
+			}	
+				
+				
+		}
+		
+
+	
+		$data['header'] = $this->load->view('header', $data, TRUE);
+		$data['footer'] = $this->load->view('footer', NULL, TRUE);
+
+		$this->load->view('dashboard_restore',$data);
+
+	}
+
+
+
+	
+	public function do_upload()
+ 	{
+
+                $config['upload_path']          = './assets/img/';
+				$config['allowed_types']        = 'gif|jpg|png';
+				$config['max_size']     = '100';
+				$config['max_width'] = '1024';
+				$config['max_height'] = '768';
+
+				$this->upload->initialize($config);
+
+
+
+                if ( ! $this->upload->do_upload('id_image'))
+                {
+						$error = array('error' => $this->upload->display_errors());
+						print_r($error);exit();
+						return false;
+				}
+				
+				return $this->upload->data('file_name');
+	
+
+	
+	}
+
+
 
 
 }
