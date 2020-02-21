@@ -30,17 +30,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div id="log" class="w-100 text-center">
                 <h5 class="mt-3">TIME LOG</h5>
-                <div class="d-flex">
+                <div class="d-flex" style="height: 510px;overflow-x: hidden;overflow-y:auto">
                     <ul class="list-group rounded-0 text-center w-100">
                         <li class="list-group-item disabled p-2 rounded-0" aria-disabled="true"><small><strong>Time In</strong></small></li>
                         <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
                         <li class="list-group-item rounded-0 bg-red"><small>7:30am</small></li>
-                        </ul>
+                    </ul>
                     <ul class="list-group rounded-0 text-center w-100 ">
                         <li class="list-group-item disabled p-2 rounded-0" aria-disabled="true"><small><strong>Time Out</strong></small></li>
-                        <li class="list-group-item rounded-0"><small>4:30pm</small></li>
-                        <li class="list-group-item rounded-0 bg-red"><small>5:30pm</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0"><small>7:30am</small></li>
+                        <li class="list-group-item rounded-0 bg-red"><small>7:30am</small></li>
                     </ul>
+                    
                 </div>
 
             </div>

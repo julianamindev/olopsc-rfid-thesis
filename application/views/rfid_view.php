@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-            <div class="w-100 mt-4 p-0" style="display: flex;">
+            <div class="w-100" style="display: flex; padding-top: 80px;">
                 <table class="table table-hover">
                     <thead>
                       <tr>
