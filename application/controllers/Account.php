@@ -75,10 +75,13 @@ class Account extends CI_Controller {
 			$formdata['firstname'] =$this->input->post('firstname') != "" ? $this->input->post('firstname') : "";
 			$formdata['middlename'] = $this->input->post('middlename')!= "" ? $this->input->post('middlename') : "";
 			$formdata['lastname'] = $this->input->post('lastname') != "" ? $this->input->post('lastname') : "";
-			$formdata['id_image'] = $this->do_upload();
+			
+			if($data['isadmin'] > 0){
+				$formdata['id_image'] = $this->do_upload();
+			}
 			$result = $this->users_model->updateAdmin($id,$formdata);
 
-			if($result && !empty($formdata['id_image'])){
+			if($result){
 				$resultuser = $this->users_model->getUserById($id);		
 				$this->session->set_userdata($resultuser);
 				$sessiondata = $this->getSessionData();

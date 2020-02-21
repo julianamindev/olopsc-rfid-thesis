@@ -84,6 +84,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </li>
                 <?php }?>
             </ul>
+            <?php if($isadmin > 0){?>
             <ul class="navbar-nav ml-auto d-flex align-items-center">
                 <li class="nav-item">
                     <label class="search-section" for="search">
@@ -94,6 +95,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </label>
                 </li>
             </ul>
+            <?php }?>
         </section>
     </nav>
 <?php }?>

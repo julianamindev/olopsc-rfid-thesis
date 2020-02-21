@@ -40,10 +40,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <label for="fname">Email</label>
                                 <input type="text" class="form-control" id="fname" placeholder="First Name" value="<?php echo $email;?>">
                             </div-->
-                            <div class="form-group  mb-5">
-                                <label for="exampleFormControlFile1">Profile Picture</label>
-                                <input type="file" class="form-control-file" id="id_image" name="id_image" required>
-                            </div>
+
                             <input type="submit" value="Edit" name="submit" class="btn btn-primary">
                         </div>
                     </form>

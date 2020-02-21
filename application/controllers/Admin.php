@@ -58,7 +58,7 @@ class Admin extends CI_Controller {
 			$formdata['firstname'] = $this->input->post('firstname');
 			$formdata['middlename'] = $this->input->post('middlename');
 			$formdata['lastname'] = $this->input->post('lastname');
-			$formdata['id_image'] = $this->do_upload();
+			//$formdata['id_image'] = $this->do_upload();
 			$formdata['isadmin'] = 1;
 			$result = $this->users_model->addAdmin($formdata);
 
@@ -108,7 +108,7 @@ class Admin extends CI_Controller {
 			$formdata['firstname'] = $this->input->post('firstname');
 			$formdata['middlename'] = $this->input->post('middlename');
 			$formdata['lastname'] = $this->input->post('lastname');
-			$formdata['id_image'] = $this->do_upload();
+			//$formdata['id_image'] = $this->do_upload();
 			$result = $this->users_model->updateAdmin($id,$formdata);
 			$datauser = $this->users_model->getUserById($id);	
 

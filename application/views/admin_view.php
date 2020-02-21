@@ -34,10 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <input type="text" class="form-control" placeholder="Last Name" name="lastname" required>
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleFormControlFile1">Profile Picture</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="id_image" required>
-                        </div>
+
                  
             </div>
             <div class="modal-footer">

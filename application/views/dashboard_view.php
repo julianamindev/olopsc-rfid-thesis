@@ -107,7 +107,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <td class="mr-auto">
                             <div class="btn-group">
                                 <a type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  <img src="assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
+                                  <img src="<?php echo base_url();?>assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                   <a class="dropdown-item" href="<?php echo base_url();?>dashboard/edit/<?php echo $std['id'];?>">Edit</a>
