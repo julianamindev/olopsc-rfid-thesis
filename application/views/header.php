@@ -46,9 +46,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div style="height: 28px; width: 28px;background: #808D93; margin-right: 8px;border-radius: 50%;"></div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#aboutUs">About</a>
                         <a class="dropdown-item" href="<?php echo base_url();?>account">Account Settings</a>
-                        <a class="dropdown-item" href="<?php echo base_url();?>logout">Sign out</a>
+                        <a class="dropdown-item" href="<?php echo base_url();?>logout">Log out</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#aboutUs">About Us</a>  
                     </div>
                     </li>
                 </ul>
@@ -66,6 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         Calendar
                     </a>
                 </li>
+                <?php if($isadmin > 0){?>
                 <li class="nav-item">
                     <a class="nav-link d-flex px-0 pr-4 <?php echo ($page=="dashboard") ? "nav-active":""; ?>" href="<?php echo base_url();?>dashboard">
                         Students
@@ -81,14 +82,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         Admin
                     </a>
                 </li>
+                <?php }?>
             </ul>
             <ul class="navbar-nav ml-auto d-flex align-items-center">
                 <li class="nav-item">
                     <label class="search-section" for="search">
+                    <?php echo form_open($search_url);?>
                         <img src="<?php echo base_url();?>assets/img/search-icon.png" class="search-icon" alt="search icon">
-                        <input type="text" id="search" class="input-search" placeholder="Search...">
+                        <input type="text" id="search" name="search" class="input-search" placeholder="Enter student number...">
+                        </form>
                     </label>
-                    
                 </li>
             </ul>
         </section>

@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
 
             <div class="modal-body d-flex">
-            <?php echo form_open('dashboard/add','id="dashboardform" class="w-100"');?>
+            <?php echo form_open_multipart('dashboard/add','id="dashboardform" class="w-100"');?>
                     <div class="form-group">
                             <input type="text" class="form-control" placeholder="Student No." name="student_no" required>
                         </div>
@@ -101,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <tr class="card-list">
                         <th scope="row"><?php echo $std['student_no']; ?></th>
                         <td><?php echo $std['firstname']." ".$std['middlename']." ".$std['lastname']; ?></td>
-                        <td><?php echo $std['cname']; ?></td>
+                        <td><?php echo $std['name']; ?></td>
                         <td><?php echo $std['ordinal_year']; ?></td>
                         <!-- <td>Active</td> -->
                         <td class="mr-auto">
@@ -110,8 +110,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   <img src="assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#editStudent">Edit</a>
-                                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#deleteStudent">Delete</a>
+                                  <a class="dropdown-item" href="<?php echo base_url();?>dashboard/edit/<?php echo $std['id'];?>">Edit</a>
+                                  <a class="dropdown-item" href="<?php echo base_url();?>dashboard/restore/<?php echo $std['id'];?>">Password Restore</a>
+                                  <a class="dropdown-item" href="<?php echo base_url();?>dashboard/delete/<?php echo $std['id'];?>">Delete</a>
+                                  
                                 </div>
                               </div>
                         </td>

@@ -15,11 +15,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="row-grid mx-0" style="margin-top: 170px;">
             <div class="">
                 <div class="card-dashboard  px-2 text-center">
-                    <img src="assets/img/pexels-photo-220453.png" alt="" class="mb-3 mt-3" style="height: 80px;">
+                    <img src="<?php echo base_url();?>assets/img/<?php echo $id_image;?>" alt="" class="mb-3 mt-3" style="height: 80px;">
                     <section>
-                        <h5 class="text-primary mb-2 pb-0">Patrick John</h5>
-                        <p class="m-0 p-0 text-secondary"><small>143198377</small></p>
-                        <p class="m-0 p-0 text-secondary"><small>COMPUTER SCIENCE</small></p>
+                        <h5 class="text-primary mb-2 pb-0"><?php echo $name;?></h5>
+                        <p class="m-0 p-0 text-secondary"><small><?php echo $student_no;?></small></p>
+                        <p class="m-0 p-0 text-secondary"><small><?php echo $course;?></small></p>
                     </section>
                 </div>
             </div>

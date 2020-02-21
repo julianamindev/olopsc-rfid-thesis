@@ -49,6 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <th scope="col">Rfid No.</th>
                         <th scope="col">Student No.</th>
                         <th scope="col">Status</th>
+                        <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -58,7 +59,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <td scope="row"><?php echo $rf['rfid_number']; ?></th>
                         <td scope="row"><?php echo $rf['student_no']; ?></th>
                         <td><?php echo $rf['status'] == 0 ? "<span style='color:red'>Inactive</span>":"<span style='color:#4c9447'>Active</span>"; ?></td>
+                        <td class="mr-auto">
+                            <div class="btn-group">
+                                <a type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <img src="assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                  <a class="dropdown-item" href="<?php echo base_url();?>rfid/delete/<?php echo $rf['rfid_number']; ?>">Delete</a>
+                                </div>
+                              </div>
+                        </td>
                       </tr>
+
                       <?php } ?>  
 
                     </tbody>
