@@ -35,6 +35,25 @@ class Student_model extends CI_Model {
         }
 
 
+
+        public function addLogStudent($studentno,$data)
+        {   
+
+                if($this->checkStudentnoExist($studentno) > 0){
+
+                        $result = $this->db->insert('time_log',$data);
+                        return  $result ? true : false ;  
+                        
+                }else{
+                      
+
+                        return false;
+                }
+
+               
+        }
+
+
         public function updateStudent($id,$data)
         {   
                 //print_r($id);
@@ -116,6 +135,17 @@ class Student_model extends CI_Model {
                 $this->db->from('user');
                 $this->db->join('course', 'user.course = course.id','left');
                 $this->db->where('student_no',  $data);
+                $query = $this->db->get();
+                return $query->row_array();
+
+        }
+
+        public function getStudentByRfid($data)
+        {   
+                $this->db->select('user.*,course.name');
+                $this->db->from('user');
+                $this->db->join('course', 'user.course = course.id','left');
+                $this->db->where('ref_rfid',  $data);
                 $query = $this->db->get();
                 return $query->row_array();
 

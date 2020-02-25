@@ -12,14 +12,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/main.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/styles.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/core/core.css">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/styles/daygrid/daygrid.css">
+    <style type="text/css">
+    .clock {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    color: #fff;
+    background-color:#000;
+    font-size:40px
+}
+    </style>
 
 </head>
 <body>
 
-<?php if($page !="login"){?>
+<?php if($page !="login" && $page != "neutral"){?>
 
 <nav class="nav-shadow fixed-top">
         <section class="top-nav navbar navbar-expand-lg navbar-light bg-light py-2 px-5">

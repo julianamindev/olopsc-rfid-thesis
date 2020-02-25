@@ -284,7 +284,7 @@ class Dashboard extends CI_Controller {
                 if ( ! $this->upload->do_upload('id_image'))
                 {
 						$error = array('error' => $this->upload->display_errors());
-						print_r($error);exit();
+					//	print_r($error);exit();
 						return false;
 				}
 				

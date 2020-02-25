@@ -76,22 +76,14 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
-    plugins: [ 'dayGrid' ],
-    eventClick: function(info) {
-      var eventObj = info.event;
-        $('#log').show()
-    },
-    defaultDate: '2020-02-15',
-    events: [
-      {
-        title: 'Absent',
-        start: '2020-02-14'
-      },
-      {
-        title: 'Present',
-        start: '2020-02-15'
-      }
-    ]
+    plugins: [ 'dayGrid', 'interaction' ],  // interaction plugin must be specified
+        
+        dateClick: function(info) {
+            alert('Clicked on: ' + info.dateStr);
+            ///alert('Current view: ' + info.view.type);
+            // change the day's background color just for fun
+            //info.dayEl.style.backgroundColor = 'red';
+        },
   });
 
   calendar.render();

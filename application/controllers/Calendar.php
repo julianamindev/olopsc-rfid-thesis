@@ -73,7 +73,7 @@ class Calendar extends CI_Controller {
 
 	
 		$data['header'] = $this->load->view('header', $data, TRUE);
-		$data['footer'] = $this->load->view('footer', NULL, TRUE);
+		$data['footer'] = $this->load->view('footer', $data, TRUE);
 		$this->load->view('calendar_view',$data);
 
 	}
