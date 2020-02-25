@@ -74,17 +74,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   $('#log').hide()
 document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
+  var baseurl = '<?php echo base_url();?>';
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: [ 'dayGrid', 'interaction' ],  // interaction plugin must be specified
         
         dateClick: function(info) {
-            alert('Clicked on: ' + info.dateStr);
-            ///alert('Current view: ' + info.view.type);
-            // change the day's background color just for fun
-            //info.dayEl.style.backgroundColor = 'red';
+            getlog();
         },
   });
+
+
+  function getlog(){
+                  //alert('Clicked on: ' + info.dateStr);
+                  $.post( baseurl+"calendar/getLog", { name: "John", time: "2pm" })
+                .done(function( data ) {
+                        console.log(data);
+                });
+  }
 
   calendar.render();
 });

@@ -29,6 +29,7 @@ class Calendar extends CI_Controller {
 		$data['name'] =  $this->session->userdata('s-name') != "" ? $this->session->userdata('s-name') : "";
 		$data['student_no'] = $this->session->userdata('s-student_no') != "" ? $this->session->userdata('s-student_no') : "";
 		$data['course'] = $this->session->userdata('s-course') != "" ? $this->session->userdata('s-course') : "";
+		$data['sid'] = $this->session->userdata('s-id') != "" ? $this->session->userdata('s-id') : "";
 		$data['id_image'] = $this->session->userdata('s-id_image') != "" ? $this->session->userdata('s-id_image') : "pexels-photo-220453.png";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
 
@@ -37,6 +38,17 @@ class Calendar extends CI_Controller {
 		$this->load->view('calendar_view',$data);
 
 	}
+
+
+
+	public function getLog()
+	{
+		
+		echo "xxx";
+
+	}
+
+
 
 
 	public function search()
@@ -58,6 +70,7 @@ class Calendar extends CI_Controller {
 			if($result){
 				$data['s-name'] = $result['firstname']." ".$result['middlename']." ".$result['lastname'];
 				$data['s-student_no'] = $result['student_no'];
+				$data['s-id'] = $result['id'];
 				$data['s-course'] = $result['name'];
 				$data['s-id_image'] = $result['id_image'];
 				$this->session->set_userdata($data);
@@ -68,6 +81,7 @@ class Calendar extends CI_Controller {
 
 		$data['name'] =  $this->session->userdata('s-name') != "" ? $this->session->userdata('s-name') : "";
 		$data['student_no'] = $this->session->userdata('s-student_no') != "" ? $this->session->userdata('s-student_no') : "";
+		$data['sid'] = $this->session->userdata('s-id') != "" ? $this->session->userdata('s-id') : "";
 		$data['course'] = $this->session->userdata('s-course') != "" ? $this->session->userdata('s-course') : "";
 		$data['id_image'] = $this->session->userdata('s-id_image') != "" ? $this->session->userdata('s-id_image') : "pexels-photo-220453.png";
 

@@ -151,6 +151,15 @@ class Student_model extends CI_Model {
 
         }
 
+        public function getStudentLog($date,$student_no)
+        {   
+                $this->db->where('student_ref_id',  $student_no);
+                $this->db->where('time_in',  $date);
+                $query = $this->db->get('time_log');
+                return $query->row_array();
+
+        }
+
 
         public function checkStudentnoExist($data)
         {   
