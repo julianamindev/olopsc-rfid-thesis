@@ -29,6 +29,7 @@ class Account extends CI_Controller {
 		$data['page'] = "account";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$data['msg'] = "";
 
 		if(isset($_SESSION['username'])){
@@ -59,6 +60,7 @@ class Account extends CI_Controller {
 		$data['page'] = "account";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$data['msg'] = "";
 		$sessiondata = array();
 		$this->load->model('users_model');

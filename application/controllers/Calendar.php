@@ -31,6 +31,7 @@ class Calendar extends CI_Controller {
 		$data['student_no'] = $this->session->userdata('s-student_no') != "" ? $this->session->userdata('s-student_no') : "";
 		$data['course'] = $this->session->userdata('s-course') != "" ? $this->session->userdata('s-course') : "";
 		$data['sid'] = $this->session->userdata('s-id') != "" ? $this->session->userdata('s-id') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$data['id_image'] = $this->session->userdata('s-id_image') != "" ? $this->session->userdata('s-id_image') : "pexels-photo-220453.png";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
 
@@ -97,6 +98,7 @@ class Calendar extends CI_Controller {
 		$data['page'] = "calendar";
 		$data['msg'] = "";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$data['search_url'] = "calendar/search";
 		$this->load->model('student_model');
 

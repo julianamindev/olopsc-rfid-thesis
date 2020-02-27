@@ -38,6 +38,7 @@ class Dashboard extends CI_Controller {
 		$data['page'] = "dashboard";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 
 		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
@@ -58,6 +59,7 @@ class Dashboard extends CI_Controller {
 		$data['page'] = "dashboard";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 
 		if(isset($_POST['submit'])){
 
@@ -122,6 +124,7 @@ class Dashboard extends CI_Controller {
 		$data['page'] = "dashboard";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$user_id = $this->uri->segment(3, 0);
 
 		$data['form'] = $this->student_model->getStudentById($user_id);	
@@ -180,6 +183,7 @@ class Dashboard extends CI_Controller {
 		$data['page'] = "dashboard";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$user_id = $this->uri->segment(3, 0);
 
 		$data['form'] = $this->student_model->getStudentById($user_id);	
@@ -235,6 +239,7 @@ class Dashboard extends CI_Controller {
 		$data['page'] = "dashboard";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$user_id = $this->uri->segment(3, 0);
 
 		$data['form'] = $this->student_model->getStudentById($user_id);	
