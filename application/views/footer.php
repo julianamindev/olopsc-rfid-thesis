@@ -14,10 +14,35 @@ $sid = isset($sid) ? $sid : '';
 <script src="<?php echo base_url();?>assets/styles/daygrid/main.js"></script> 
 <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.2.0/main.js"></script>
 <script type="text/javascript">
+var sid = '<?php echo $sid;?>';
 
 $(document).ready(function() {
 
-  var sid = '<?php echo $sid;?>';
+$("#btn-account").click(function(event){
+
+  var np = $("#new_password").val();
+  var cp = $("#confirm_password").val();
+
+
+  if((cp != "") || (np != "")){
+
+    if((np != cp) || (cp != np) ){
+
+        alert("Password mismatch");
+        $("#new_password").val("");
+        $("#confirm_password").val("");
+        return false;
+
+    }else{
+
+        $("#accountform").submit();
+
+    }
+
+  }
+
+})
+
 
 $('.input-search').keydown(function(event) {
   // enter has keyCode = 13, change it if you want to use another button
@@ -32,37 +57,6 @@ $('#student_no_time').focus();
 $('#student_no_time').focusout(function(){
          $(this).focus();
      });
-
-
-function showTime(){
-    var date = new Date();
-    var h = date.getHours(); // 0 - 23
-    var m = date.getMinutes(); // 0 - 59
-    var s = date.getSeconds(); // 0 - 59
-    var session = "AM";
-    
-    if(h == 0){
-        h = 12;
-    }
-    
-    if(h > 12){
-        h = h - 12;
-        session = "PM";
-    }
-    
-    h = (h < 10) ? "0" + h : h;
-    m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
-    
-    var time = h + ":" + m + ":" + s + " " + session;
-    document.getElementById("MyClockDisplay").innerText = time;
-    document.getElementById("MyClockDisplay").textContent = time;
-    
-    setTimeout(showTime, 1000);
-    
-}
-
-showTime();
 
 
 </script>

@@ -24,6 +24,7 @@ class Calendar extends CI_Controller {
 			redirect('/login');
 		}
 		$data['page'] = "calendar";
+		$data['msg'] = "";
 		$data['search_url'] = "calendar/search";
 
 		$data['name'] =  $this->session->userdata('s-name') != "" ? $this->session->userdata('s-name') : "";
@@ -44,7 +45,44 @@ class Calendar extends CI_Controller {
 	public function getLog()
 	{
 		
-		echo "xxx";
+
+		//print_r($this->input->post());exit();
+		$this->load->model('student_model');
+		$result = $this->student_model->getStudentLog($this->input->post('date'),$this->input->post('sid'));
+
+	
+		$html = "<table border='1' class='logtable'>";
+		$html .= "<tr><td>Time in</td><td>Time out</td></tr>";
+		
+
+		if(count($result) > 0){
+
+			$chunk = array_chunk($result, 2);
+
+			foreach($chunk as $ch){
+
+				$html .= "<tr>";
+				foreach($ch as $logs){
+
+					$html .= "<td>".date('h:i a ', strtotime($logs['time_in']))."</td>";
+				
+				}
+
+				$html .= "</tr>";
+					
+			}
+		
+		}else{
+
+			$html .= "<tr><td colspan='2'>No time log found.</td></tr>";
+
+		}
+
+		$html .= "</table>";
+
+		echo $html;
+
+
 
 	}
 
@@ -57,6 +95,7 @@ class Calendar extends CI_Controller {
 			redirect('/login');
 		}
 		$data['page'] = "calendar";
+		$data['msg'] = "";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
 		$data['search_url'] = "calendar/search";
 		$this->load->model('student_model');
@@ -75,6 +114,13 @@ class Calendar extends CI_Controller {
 				$data['s-id_image'] = $result['id_image'];
 				$this->session->set_userdata($data);
 				
+			}else{
+				$this->session->unset_userdata('s-name');
+				$this->session->unset_userdata('s-student_no');
+				$this->session->unset_userdata('s-id');
+				$this->session->unset_userdata('s-course');
+				$this->session->unset_userdata('s-id_image');
+				$data['msg'] = "No student no. found!";
 			}	
 					
 		}

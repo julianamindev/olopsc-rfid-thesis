@@ -147,6 +147,7 @@ class Student_model extends CI_Model {
                 $this->db->join('course', 'user.course = course.id','left');
                 $this->db->where('ref_rfid',  $data);
                 $query = $this->db->get();
+               
                 return $query->row_array();
 
         }
@@ -154,9 +155,11 @@ class Student_model extends CI_Model {
         public function getStudentLog($date,$student_no)
         {   
                 $this->db->where('student_ref_id',  $student_no);
-                $this->db->where('time_in',  $date);
+                $this->db->where('time_in >=', $date.' 00:00:00');
+                $this->db->where('time_in <=', $date.' 59:59:59');
+                $this->db->order_by("log_id", "asc");
                 $query = $this->db->get('time_log');
-                return $query->row_array();
+                return $query->result_array();
 
         }
 
