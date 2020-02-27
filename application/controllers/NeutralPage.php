@@ -47,7 +47,7 @@ class NeutralPage extends CI_Controller {
 				$data['student']['student_no'] = "";
 				$data['student']['name'] = "";
 				$data['student']['id_image'] = "pexels-photo-220453.png";
-				$data['error'] = "No data found!";
+				$data['error'] = "Card not registered. Please contact administrator.";
 			}
 
 			
@@ -59,7 +59,7 @@ class NeutralPage extends CI_Controller {
 			$data['student']['student_no'] = "";
 			$data['student']['name'] = "";
 			$data['student']['id_image'] = "pexels-photo-220453.png";
-			$data['error'] = "No data found!";
+			$data['error'] = "Card not registered. Please contact administrator.";
 
 
 

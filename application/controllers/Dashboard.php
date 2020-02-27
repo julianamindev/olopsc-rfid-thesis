@@ -82,7 +82,7 @@ class Dashboard extends CI_Controller {
 				$rfiddate['status'] = 1;
 				$this->rfid_model->updateRfid($this->input->post('rfid_number'),$rfiddate);
 			}else{
-			    $data['msg'] = "<span style='color:red'>Error, Student cannot be save!</span>";
+			    $data['msg'] = "<span style='color:red'>Error! Student no. is already registered.</span>";
 			}	
 				
 		}
@@ -143,7 +143,7 @@ class Dashboard extends CI_Controller {
 				$data['msg'] = "<span style='color:#4c9447'>Student successfully edited!</span>";
 
 			}else{
-			    $data['msg'] = "<span style='color:red'>Error, Student cannot be save!</span>";
+			    $data['msg'] = "<span style='color:red'>Error! Student no. is already registered.</span>";
 			}	
 				
 		}

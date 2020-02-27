@@ -62,7 +62,7 @@ class Rfid extends CI_Controller {
 			if($result){
 				$data['msg'] = "<span style='color:#4c9447'>Rfid successfully added!</span>";
 			}else{
-				$data['msg'] = "<span style='color:red'>Error! Rfid cannot be save!</span>";
+				$data['msg'] = "<span style='color:red'>Error! Rfid already registered.</span>";
 			}	
 				
 		}
@@ -104,7 +104,7 @@ class Rfid extends CI_Controller {
 				$data['msg'] = "<span style='color:#4c9447'>Rfid successfully added!</span>";
 				redirect('/rfid');
 			}else{
-				$data['msg'] = "<span style='color:red'>Error! Rfid cannot be deleted!</span>";
+				$data['msg'] = "<span style='color:red'>Error! Rfid already registered.</span>";
 			}	
 				
 		}

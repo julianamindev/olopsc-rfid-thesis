@@ -120,7 +120,7 @@ class Calendar extends CI_Controller {
 				$this->session->unset_userdata('s-id');
 				$this->session->unset_userdata('s-course');
 				$this->session->unset_userdata('s-id_image');
-				$data['msg'] = "No student no. found!";
+				$data['msg'] = "<span style='color:red'>No student no. found!</span>";
 			}	
 					
 		}
