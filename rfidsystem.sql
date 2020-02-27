@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Feb 21, 2020 at 10:49 AM
+-- Generation Time: Feb 27, 2020 at 09:18 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.0.33
 
@@ -64,7 +64,9 @@ CREATE TABLE IF NOT EXISTS `rfid` (
 
 INSERT INTO `rfid` (`rfid_number`, `status`) VALUES
 ('543452321', 1),
-('123432123', 1);
+('123432123', 1),
+('44646456', 1),
+('35453453453', 0);
 
 -- --------------------------------------------------------
 
@@ -76,18 +78,29 @@ DROP TABLE IF EXISTS `time_log`;
 CREATE TABLE IF NOT EXISTS `time_log` (
   `log_id` int(11) NOT NULL AUTO_INCREMENT,
   `student_ref_id` int(11) DEFAULT NULL,
-  `time_in` time DEFAULT NULL,
-  `time_out` time DEFAULT NULL,
+  `time_in` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `log_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`log_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `time_log`
 --
 
-INSERT INTO `time_log` (`log_id`, `student_ref_id`, `time_in`, `time_out`, `log_date`) VALUES
-(1, 2, '09:00:00', '18:00:00', '2020-02-12 11:09:29');
+INSERT INTO `time_log` (`log_id`, `student_ref_id`, `time_in`, `log_date`) VALUES
+(6, 10, '2020-02-25 07:26:48', '2020-02-25 15:26:48'),
+(8, 10, '2020-02-25 07:29:40', '2020-02-25 15:29:40'),
+(7, 10, '2020-02-25 07:27:22', '2020-02-25 15:27:22'),
+(4, 10, '2020-02-25 07:26:05', '2020-02-25 15:26:05'),
+(5, 10, '2020-02-25 07:26:09', '2020-02-25 15:26:09'),
+(9, 32, '2020-02-25 08:02:33', '2020-02-25 16:02:33'),
+(10, 32, '2020-02-25 08:03:20', '2020-02-25 16:03:20'),
+(11, 30, '2020-02-25 08:03:30', '2020-02-25 16:03:30'),
+(12, 31, '2020-02-25 08:03:58', '2020-02-25 16:03:58'),
+(13, 31, '2020-02-25 08:05:09', '2020-02-25 16:05:09'),
+(14, 31, '2020-02-25 08:39:10', '2020-02-25 16:39:10'),
+(15, 10, '2020-02-27 03:53:15', '2020-02-27 11:53:15'),
+(16, 10, '2020-02-27 03:53:19', '2020-02-27 11:53:19');
 
 -- --------------------------------------------------------
 
@@ -112,18 +125,17 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(255) DEFAULT NULL,
   `student_no` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `firstname`, `middlename`, `lastname`, `course`, `ordinal_year`, `semester`, `id_image`, `ref_rfid`, `isadmin`, `email`, `student_no`) VALUES
-(1, 'dremorozas', '123321', 'Darrels', 'Lazados', 'Remorozas', NULL, '', '', 'Face_to_Face1.png', '', 1, 'dremoroza@gmail.com', ''),
+(1, 'superadmin', 'superadmin', 'Administrator', '', '', NULL, '', '', 'solid-logo8.png', '', 1, 'dremoroza@gmail.com', ''),
 (31, 'jdoe', '777777777', 'john', 's', 'doe', 2, '2nd Year', NULL, 'Live_Lessons2.png', '123432123', 0, NULL, '777777777'),
-(29, 'julian', '123321', 'Julian', 'B', 'Amin', NULL, NULL, NULL, 'Mobile2.png', NULL, 1, NULL, NULL),
-(30, 'test', '123321', 'Test', 'Test', 'Test', 2, '2nd Year', NULL, 'Live_Lessons1.png', '543452321', 0, NULL, '66666666'),
-(10, 'richard', '123321', 'Vigil', 'B', 'Boniol', 7, '2nd Year', NULL, NULL, '', 0, 'dremoroza@gmail.com', '555555555');
+(30, 'test222', 'qweqwe', 'Test', 'Test', 'Test', 2, '2nd Year', NULL, 'eLearning.png', '543452321', 0, NULL, '66666666'),
+(10, 'richard', '555555555', 'Vigil', 'B', 'Boniol', 7, '2nd Year', NULL, 'Live_Lessons3.png', '44646456', 0, 'dremoroza@gmail.com', '555555555');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
