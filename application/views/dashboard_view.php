@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Profile Picture</label>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="id_image" required>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1" name="id_image">
                         </div>
                  
             </div>
@@ -75,14 +75,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Add Student End -->
    
     <div class="dashboard-container mx-auto " style="margin-top:8%">
-    <p><?php echo $msg; ?></p>
+    
         <!-- <div class="d-flex mt-5">
             <button class="btn btn-primary mr-2">Active</button>
             <button class="btn btn-secondary">Inactive</button>
         </div> -->
 
 
-            <div class="w-100" style="display: flex; padding-top: 80px;">
+            <div class="w-100" style="display: flex;flex-direction:column; padding-top: 80px;">
+              <p><?php echo $msg; ?></p>
                 <table class="table table-hover">
 
                     <thead>

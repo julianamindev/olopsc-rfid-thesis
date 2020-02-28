@@ -18,6 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             <div class="mx-3">
+                
                 <div class="card-dashboard p-5">
                     <h3 class="text-primary mb-4">General Account Settings</h3>
                     <p><?php echo $msg; ?></p>
@@ -25,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <input type="hidden" class="form-control" id="id" name="id" value="<?php echo $id;?>">
                         <div class="form-group">
                             <label for="fname">Username</label>
-                            <input type="text" class="form-control" id="username" placeholder="Username" name="username" value="<?php echo $username;?>">
+                            <input type="text" class="form-control" id="username" placeholder="Username" name="username" value="<?php echo $username;?>" <?php echo $isadmin == 1 ? "" : "readonly" ?>>
                         </div>
                         <div class="form-group">
                             <label for="fname">Password</label>

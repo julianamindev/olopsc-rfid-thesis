@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
     <div class="dashboard-container mx-auto" style="margin-top:8%">
-    <p><?php echo $msg; ?></p>
+    
         <!-- <div class="d-flex mt-5">
             <button class="btn btn-primary mr-2">Active</button>
             <button class="btn btn-secondary">Inactive</button>
@@ -42,8 +42,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-            <div class="w-100" style="display: flex; padding-top: 80px;">
-                <table class="table table-hover">
+            <div class="w-100" style="display: flex; flex-direction:column;padding-top: 80px;">
+            <p class="col-12"><?php echo $msg; ?></p>  
+              <table class="table table-hover">
                     <thead>
                       <tr>
                         <th scope="col">Rfid Card</th>

@@ -32,7 +32,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             <div id="log" class="w-100 text-center">
-                <h5 class="mt-3">TIME LOG</h5>
                 <div id="log-area">
 
                 </div>

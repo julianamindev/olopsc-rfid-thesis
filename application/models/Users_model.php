@@ -22,7 +22,17 @@ class Users_model extends CI_Model {
                 $this->db->where('username', $data['username']);
                 $this->db->where('password',$data['password']);
                 $query = $this->db->get();
-                return $query->row_array();
+
+                //print_r($query->row_array());exit();
+                if($query->row_array()){
+                        return $query->row_array();
+                }else{
+                        return false;
+                }
+
+
+
+                //return $query->row_array();
         }
 
 
