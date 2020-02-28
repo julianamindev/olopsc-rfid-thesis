@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php echo form_open('rfid/add','id="rfidform"');?>
             <div class="modal-body d-flex">
                         <div class="form-group w-100">
-                            <input type="text" class="form-control" placeholder="Card" name="rfid_number" required> 
+                            <input type="text" class="form-control" placeholder="Tap RFID card..." name="rfid_number" required> 
                         </div>  
             </div>
             <div class="modal-footer">
