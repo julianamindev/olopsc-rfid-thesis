@@ -39,7 +39,7 @@ class NeutralPage extends CI_Controller {
 				$this->student_model->addLogStudent($result['student_no'],$log);	
 
 				$data['student'] = $result;
-				$data['error'] = "Welcome!";
+				$data['error'] = "Welcome! You log at ".date('h:i a ');
 			}else{
 				$data['student']['firstname'] = "";
 				$data['student']['middlename'] = "";
