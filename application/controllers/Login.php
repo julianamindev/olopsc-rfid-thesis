@@ -47,7 +47,7 @@ class Login extends CI_Controller {
 		if(isset($_POST['submit'])){
 		
 			$result = $this->users_model->validateUser($this->input->post());
-			if(count($result)){
+			if($result){
 				$this->session->set_userdata($result);
 				
 				if($result['isadmin'] > 0){

@@ -74,7 +74,12 @@ class Dashboard extends CI_Controller {
 			$formdata['course'] = $this->input->post('course');
 			$formdata['ordinal_year'] = $this->input->post('ordinal_year');
 			$formdata['ref_rfid'] = $this->input->post('rfid_number');
-			$formdata['id_image'] = $this->do_upload();
+
+			if($_FILES['id_image']['name']){
+				$formdata['id_image'] = $this->do_upload();
+			}	
+			
+			
 			$formdata['isadmin'] = 0;
 			$result = $this->student_model->addStudent($formdata);
 
@@ -139,6 +144,10 @@ class Dashboard extends CI_Controller {
 			$formdata['course'] = $this->input->post('course');
 			$formdata['ordinal_year'] = $this->input->post('ordinal_year');
 
+			if($_FILES['id_image']['name']){
+				$formdata['id_image'] = $this->do_upload();
+			}	
+			
 			if($this->input->post('ref_rfid') != ""){
 
 				$formdata['ref_rfid'] = $this->input->post('ref_rfid');

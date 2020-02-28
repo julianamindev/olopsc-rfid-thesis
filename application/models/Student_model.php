@@ -97,6 +97,8 @@ class Student_model extends CI_Model {
                         $this->db->where('id', $id);
                         $this->db->delete('user');
 
+                        //delete timelog
+                      $this->deleteTimeLog($id);
 
                         //update rfid
                         $rf = array("status" =>0);
@@ -110,6 +112,13 @@ class Student_model extends CI_Model {
                 }
 
                
+        }
+
+
+        public function deleteTimeLog($id){
+                $this->db->where('student_ref_id', $id);
+                $this->db->delete('time_log');
+
         }
 
         public function checkStudentId($data)
@@ -156,9 +165,11 @@ class Student_model extends CI_Model {
         {   
                 $this->db->where('student_ref_id',  $student_no);
                 $this->db->where('time_in >=', $date.' 00:00:00');
-                $this->db->where('time_in <=', $date.' 59:59:59');
+                $this->db->where('time_in <=', $date.' 23:59:59');
                 $this->db->order_by("log_id", "asc");
                 $query = $this->db->get('time_log');
+
+                //print_r($this->db->last_query());exit();
                 return $query->result_array();
 
         }
