@@ -29,6 +29,7 @@ class Rfid extends CI_Controller {
 		$data['page'] = "rfid";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$this->load->model('rfid_model');
 		$result = $this->rfid_model->getAllRfid();
 		$data['rfid'] = $result;
@@ -51,6 +52,7 @@ class Rfid extends CI_Controller {
 		$data['page'] = "rfid";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 
 		if(isset($_POST['submit'])){
 
@@ -62,7 +64,7 @@ class Rfid extends CI_Controller {
 			if($result){
 				$data['msg'] = "<span style='color:#4c9447'>Rfid successfully added!</span>";
 			}else{
-				$data['msg'] = "<span style='color:red'>Error! Rfid cannot be save!</span>";
+				$data['msg'] = "<span style='color:red'>Error! Rfid already registered.</span>";
 			}	
 				
 		}
@@ -92,6 +94,7 @@ class Rfid extends CI_Controller {
 		$data['search_url'] = "calendar/search";
 		$rfid_id = $this->uri->segment(3, 0);
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$result = $this->rfid_model->getRfidByNo($rfid_id);	
 
 
@@ -104,7 +107,7 @@ class Rfid extends CI_Controller {
 				$data['msg'] = "<span style='color:#4c9447'>Rfid successfully added!</span>";
 				redirect('/rfid');
 			}else{
-				$data['msg'] = "<span style='color:red'>Error! Rfid cannot be deleted!</span>";
+				$data['msg'] = "<span style='color:red'>Error! Rfid already registered.</span>";
 			}	
 				
 		}

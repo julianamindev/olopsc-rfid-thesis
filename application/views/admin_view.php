@@ -71,6 +71,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <td><?php echo $adm['username']; ?></td>
                             <td><?php echo $adm['firstname']." ".$adm['middlename']." ".$adm['lastname']; ?></td>
                             <td class="mr-auto">
+                            <?php if($adm['id'] != 1){?>
                             <div class="btn-group">
                                 <a type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                   <img src="<?php echo base_url();?>assets/img/gear icon.png" alt="" style="height: 15px;width: auto;">
@@ -80,6 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   <a class="dropdown-item" href="<?php echo base_url();?>admin/delete/<?php echo $adm['id'];?>">Delete</a>
                                 </div>
                               </div>
+                            <?php }?>
                         </td>
                         </tr>
                     <?php } ?>

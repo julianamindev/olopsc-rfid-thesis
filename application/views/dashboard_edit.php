@@ -13,7 +13,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <p><?php echo $msg; ?></p>
                               <?php echo form_open('dashboard/edit','id="dashboardform" class="w-100"');?>
                               <input type="hidden" class="form-control" placeholder="Student No." name="id" value="<?php echo $form[0]['id']; ?>" >
-                          
+                            
+                              
                               <div class="form-group">
                               <label for="fname">Student No.</label>
                                       <input type="text" class="form-control" placeholder="Student No." name="student_no"  value="<?php echo $form[0]['student_no']; ?>"  required>
@@ -49,6 +50,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                           <option value="4th Year" <?php echo ($form[0]['ordinal_year'] == "4th Year") ? "selected" : ""; ?> >4th Year</option>
                                         </select>
                                   </div>
+                                  <div class="form-group ">
+                                  <label for="fname">Existing Rfid Card</label>         
+                                  <input type="text" class="form-control" placeholder="Student No." name="old_ref_rfid" value="<?php echo $form[0]['ref_rfid']; ?>" readonly> 
+                                  <label for="fname">New Rfid Card</label>
+                                        <select class="custom-select" name="ref_rfid">
+                                            <option   value="">--RFID Card--</option>
+                                            <?php foreach($rfid as $rf) { ?>
+                                            <option value="<?php echo $rf['rfid_number']; ?>"><?php echo $rf['rfid_number']; ?></option>
+                                            <?php } ?> 
+                                        </select>
+                                    </div>
                                   <button type="submit" class="btn btn-primary" name="submit">Edit</button>
                       </div>
                       </form>

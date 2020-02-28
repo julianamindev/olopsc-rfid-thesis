@@ -57,6 +57,7 @@ class Login extends CI_Controller {
 					
 					$data['s-name'] = $result['firstname']." ".$result['middlename']." ".$result['lastname'];
 					$data['s-student_no'] = $result['student_no'];
+					$data['s-id'] = $result['id'];
 					$data['s-course'] = $result['name'];
 					$data['s-id_image'] = $result['id_image'];
 					$this->session->set_userdata($data);

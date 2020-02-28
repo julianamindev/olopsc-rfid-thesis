@@ -27,6 +27,7 @@ class Admin extends CI_Controller {
 		$data['page'] = "admin";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$this->load->model('users_model');
 		$result = $this->users_model->getUserAdmin();
 		$data['admin'] = $result;
@@ -47,6 +48,7 @@ class Admin extends CI_Controller {
 		$data['page'] = "admin";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$this->load->model('users_model');
 
 
@@ -94,6 +96,7 @@ class Admin extends CI_Controller {
 		$data['page'] = "admin";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$this->load->model('users_model');
 		$user_id = $this->uri->segment(3, 0);
 		$datauser = $this->users_model->getUserById($user_id);		
@@ -141,6 +144,7 @@ class Admin extends CI_Controller {
 		$data['page'] = "admin";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$this->load->model('users_model');
 		$user_id = $this->uri->segment(3, 0);
 		$datauser = $this->users_model->getUserById($user_id);		

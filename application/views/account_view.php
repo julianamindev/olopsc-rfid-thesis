@@ -34,12 +34,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                      
                             <div class="form-group">
                                 <label for="fname">New password</label>
-                                <input type="password" class="form-control" id="firstname" placeholder="New Password" >
+                                <input type="password" class="form-control" id="new_password" placeholder="New Password" name="new_password" >
                             </div>
                         
                             <div class="form-group">
                                 <label for="fname">Confirm New password</label>
-                                <input type="password" class="form-control" id="firstname" placeholder="Confirm New Password" >
+                                <input type="password" class="form-control" id="confirm_password" placeholder="Confirm New Password" name="confirm_password" >
                             </div>
                         <hr>
                         <div class="form-group">
@@ -62,10 +62,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <?php if($isadmin > 0){?>
                             <div class="form-group  mb-5">
                                 <label for="exampleFormControlFile1">Profile Picture</label>
-                                <input type="file" class="form-control-file" id="id_image" name="id_image" required>
+                                <input type="file" class="form-control-file" id="id_image" name="id_image">
                             </div>
                             <?php }?>
-                            <input type="submit" value="Save Changes" name="submit" class="btn btn-primary">
+                            <input type="submit" value="Save Changes" name="submit" id="btn-account" class="btn btn-primary">
                         </div>
                     </form>
                 </div>

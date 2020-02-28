@@ -38,6 +38,7 @@ class Dashboard extends CI_Controller {
 		$data['page'] = "dashboard";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 
 		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
@@ -58,12 +59,14 @@ class Dashboard extends CI_Controller {
 		$data['page'] = "dashboard";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 
 		if(isset($_POST['submit'])){
 
 			$formdata =array();
 			$formdata['student_no'] = $this->input->post('student_no');
-			$formdata['username'] = substr($this->input->post('firstname'),0,1).$this->input->post('lastname');
+			//$formdata['username'] = substr($this->input->post('firstname'),0,1).$this->input->post('lastname');
+			$formdata['username'] = $this->input->post('student_no');
 			$formdata['password'] = $this->input->post('student_no');
 			$formdata['firstname'] = $this->input->post('firstname');
 			$formdata['middlename'] = $this->input->post('middlename');
@@ -82,7 +85,7 @@ class Dashboard extends CI_Controller {
 				$rfiddate['status'] = 1;
 				$this->rfid_model->updateRfid($this->input->post('rfid_number'),$rfiddate);
 			}else{
-			    $data['msg'] = "<span style='color:red'>Error, Student cannot be save!</span>";
+			    $data['msg'] = "<span style='color:red'>Error! Student no. is already registered.</span>";
 			}	
 				
 		}
@@ -122,6 +125,7 @@ class Dashboard extends CI_Controller {
 		$data['page'] = "dashboard";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$user_id = $this->uri->segment(3, 0);
 
 		$data['form'] = $this->student_model->getStudentById($user_id);	
@@ -134,7 +138,16 @@ class Dashboard extends CI_Controller {
 			$formdata['lastname'] = $this->input->post('lastname');
 			$formdata['course'] = $this->input->post('course');
 			$formdata['ordinal_year'] = $this->input->post('ordinal_year');
+
+			if($this->input->post('ref_rfid') != ""){
+
+				$formdata['ref_rfid'] = $this->input->post('ref_rfid');
+
+			}
+
+			$formdata['ordinal_year'] = $this->input->post('ordinal_year');
 			$result = $this->student_model->updateStudent($this->input->post('id'),$formdata);
+
 			$data['form'] = $this->student_model->getStudentById($this->input->post('id'));	
 			//print_r($result);exit();
 
@@ -142,8 +155,27 @@ class Dashboard extends CI_Controller {
 
 				$data['msg'] = "<span style='color:#4c9447'>Student successfully edited!</span>";
 
+				
+					if($this->input->post('ref_rfid') != ""){
+
+							//update new rfid
+							$rfiddate = array();
+							$rfiddate['status'] = 1;
+							$this->rfid_model->updateRfid($this->input->post('ref_rfid'),$rfiddate);
+		
+						//update OLD rfid
+						$rfiddate = array();
+						$rfiddate['status'] = 0;
+						$this->rfid_model->updateRfid($this->input->post('old_ref_rfid'),$rfiddate);
+
+					}
+
+
+
+
+
 			}else{
-			    $data['msg'] = "<span style='color:red'>Error, Student cannot be save!</span>";
+			    $data['msg'] = "<span style='color:red'>Error! Student no. is already registered.</span>";
 			}	
 				
 		}
@@ -180,6 +212,7 @@ class Dashboard extends CI_Controller {
 		$data['page'] = "dashboard";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$user_id = $this->uri->segment(3, 0);
 
 		$data['form'] = $this->student_model->getStudentById($user_id);	
@@ -235,6 +268,7 @@ class Dashboard extends CI_Controller {
 		$data['page'] = "dashboard";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$user_id = $this->uri->segment(3, 0);
 
 		$data['form'] = $this->student_model->getStudentById($user_id);	
@@ -284,7 +318,7 @@ class Dashboard extends CI_Controller {
                 if ( ! $this->upload->do_upload('id_image'))
                 {
 						$error = array('error' => $this->upload->display_errors());
-						print_r($error);exit();
+					//	print_r($error);exit();
 						return false;
 				}
 				

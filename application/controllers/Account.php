@@ -29,6 +29,7 @@ class Account extends CI_Controller {
 		$data['page'] = "account";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$data['msg'] = "";
 
 		if(isset($_SESSION['username'])){
@@ -59,6 +60,7 @@ class Account extends CI_Controller {
 		$data['page'] = "account";
 		$data['search_url'] = "calendar/search";
 		$data['isadmin'] =  $this->session->userdata('isadmin') != "" ? $this->session->userdata('isadmin') : "";
+		$data['id_image_h'] = $this->session->userdata('id_image') != "" ? $this->session->userdata('id_image') : "pexels-photo-220453.png";
 		$data['msg'] = "";
 		$sessiondata = array();
 		$this->load->model('users_model');
@@ -71,12 +73,20 @@ class Account extends CI_Controller {
 
 			$id = $this->input->post('id');
 			$formdata['username'] = $this->input->post('username') != "" ?$this->input->post('username') : "";
-			$formdata['password'] =$this->input->post('password') != "" ? $this->input->post('password') : "";
+
+			if($this->input->post('new_password') != "" && $this->input->post('confirm_password') != ""){
+				$formdata['password'] =$this->input->post('new_password') != "" ? $this->input->post('new_password') : "";
+			}else{
+				$formdata['password'] =$this->input->post('password') != "" ? $this->input->post('password') : "";
+
+			}
+
+			
 			$formdata['firstname'] =$this->input->post('firstname') != "" ? $this->input->post('firstname') : "";
 			$formdata['middlename'] = $this->input->post('middlename')!= "" ? $this->input->post('middlename') : "";
 			$formdata['lastname'] = $this->input->post('lastname') != "" ? $this->input->post('lastname') : "";
 			
-			if($data['isadmin'] > 0){
+			if($data['isadmin'] > 0 AND $_FILES['id_image']['name']){
 				$formdata['id_image'] = $this->do_upload();
 			}
 			$result = $this->users_model->updateAdmin($id,$formdata);
@@ -127,7 +137,7 @@ class Account extends CI_Controller {
 
                 $config['upload_path']          = './assets/img/';
 				$config['allowed_types']        = 'gif|jpg|png';
-				$config['max_size']     = '100';
+				$config['max_size']     = '10000';
 				$config['max_width'] = '1024';
 				$config['max_height'] = '768';
 
