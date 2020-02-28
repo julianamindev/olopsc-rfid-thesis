@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th scope="col">Rfid Card</th>
+                        <th scope="col">RFID Card</th>
                         <th scope="col">Student No.</th>
                         <th scope="col">Status</th>
                         <th scope="col"></th>
