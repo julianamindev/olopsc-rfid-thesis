@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <p><?php echo $msg; ?></p>
                               <?php echo form_open('rfid/delete','id="dashboardform" class="w-100"');?>
                               <div class="form-group">
-                              <label for="fname">Rfid No.</label>
+                              <label for="fname">RFID No.</label>
                                       <input type="text" class="form-control" placeholder="Rfid No." name="rfid_number"  value="<?php echo $rfid_number; ?>"  readonly>
                                   </div>
                                  
