@@ -53,9 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: [ 'dayGrid', 'interaction' ],  // interaction plugin must be specified
-        
+    selectable: true,  
+    select: function(info) {
+    }, 
         dateClick: function(info) {
             getlog(info);
+
         },
   });
 
