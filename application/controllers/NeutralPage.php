@@ -40,7 +40,7 @@ class NeutralPage extends CI_Controller {
 				$this->student_model->addLogStudent($result['student_no'],$log);	
 
 				$data['student'] = $result;
-				$data['error'] = "Welcome! You log at ".date('h:i A ');
+				$data['error'] = "Welcome! You logged at ".date('h:i A ');
 			}else{
 				$data['student']['firstname'] = "";
 				$data['student']['middlename'] = "";
@@ -48,7 +48,7 @@ class NeutralPage extends CI_Controller {
 				$data['student']['student_no'] = "";
 				$data['student']['name'] = "";
 				$data['student']['id_image'] = "pexels-photo-220453.png";
-				$data['error'] = "Card not registered. Please contact administrator.";
+				$data['error'] = "Unregistered card. Please contact administrator.";
 			}
 
 			
