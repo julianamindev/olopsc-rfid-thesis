@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <label for="exampleFormControlFile1">Profile Picture</label>
                                  <input type="file" class="form-control-file" id="id_image" name="id_image">
                                  </div>
-                                  <button type="submit" class="btn btn-primary" name="submit">Edit</button>
+                                  <button type="submit" class="btn btn-primary" name="submit">Save</button>
                       </div>
                       </form>
                 </div>
