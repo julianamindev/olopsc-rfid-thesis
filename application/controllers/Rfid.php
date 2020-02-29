@@ -104,16 +104,17 @@ class Rfid extends CI_Controller {
 			$result = $this->rfid_model->deleteRfidByNo($ref_rfid);
 
 			if($result){
-				$data['msg'] = "<span style='color:#4c9447'>RFID saved!</span>";
+				$data['msg'] = "<span style='color:#4c9447'>RFID deleted!</span>";
 				redirect('/rfid');
 			}else{
 				$data['msg'] = "<span style='color:red'>RFID is still assigned to a student!</span>";
+				$this->session->set_flashdata("msg", $data['msg']);
+				redirect('/rfid/delete/' . $ref_rfid);
 			}	
 				
 		}
 
 		$data['rfid_number'] = ($result != "") ? $result['rfid_number'] : "";
-	
 
 		$data['header'] = $this->load->view('header', $data, TRUE);
 		$data['footer'] = $this->load->view('footer', NULL, TRUE);
