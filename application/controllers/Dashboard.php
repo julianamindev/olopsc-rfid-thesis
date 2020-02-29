@@ -289,7 +289,7 @@ class Dashboard extends CI_Controller {
 
 			if($result){
 
-				$data['msg'] = "<span style='color:#4c9447'>Password successfully restore.</span>";
+				$data['msg'] = "<span style='color:#4c9447'>Password successfully restored!</span>";
 				$data['form'] = $this->student_model->getStudentById($this->input->post('id'));	
 
 			}else{
