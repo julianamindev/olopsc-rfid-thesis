@@ -33,7 +33,8 @@ class NeutralPage extends CI_Controller {
 
 		
 			$result = $this->student_model->getStudentByRfid($this->input->post('ref_rfid'));
-			if(count($result)){
+			//if(count($result) > 0 && $result){
+				if(!is_null($result)){
 
 				$log['student_ref_id'] = $result['id'];
 				$this->student_model->addLogStudent($result['student_no'],$log);	
