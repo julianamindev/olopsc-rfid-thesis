@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="mx-0" style="margin-top: 200px;">
             <div class="mx-3">
                 <div class="card-dashboard p-5">
-                    <h3 class="text-primary mb-4">Student Edit</h3>
+                    <h3 class="text-primary mb-4">Edit Student Info</h3>
                     <p><?php echo $msg; ?></p>
                               <?php echo form_open_multipart('dashboard/edit','id="dashboardform" class="w-100"');?>
                               <input type="hidden" class="form-control" placeholder="Student No." name="id" value="<?php echo $form[0]['id']; ?>" >
@@ -65,7 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <label for="exampleFormControlFile1">Profile Picture</label>
                                  <input type="file" class="form-control-file" id="id_image" name="id_image">
                                  </div>
-                                  <button type="submit" class="btn btn-primary" name="submit">Edit</button>
+                                  <button type="submit" class="btn btn-primary" name="submit">Save</button>
                       </div>
                       </form>
                 </div>

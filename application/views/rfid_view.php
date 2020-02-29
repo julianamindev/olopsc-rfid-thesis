@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title text-primary" id="staticBackdropLabel">Add Rfid</h5>
+              <h5 class="modal-title text-primary" id="staticBackdropLabel">Add RFID</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -18,7 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <?php echo form_open('rfid/add','id="rfidform"');?>
             <div class="modal-body d-flex">
                         <div class="form-group w-100">
-                            <input type="text" class="form-control" placeholder="Card" name="rfid_number" required> 
+                            <input type="text" class="form-control" placeholder="Tap RFID card..." name="rfid_number" required> 
                         </div>  
             </div>
             <div class="modal-footer">
@@ -47,7 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th scope="col">Rfid Card</th>
+                        <th scope="col">RFID Card</th>
                         <th scope="col">Student No.</th>
                         <th scope="col">Status</th>
                         <th scope="col"></th>

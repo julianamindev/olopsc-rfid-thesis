@@ -33,13 +33,14 @@ class NeutralPage extends CI_Controller {
 
 		
 			$result = $this->student_model->getStudentByRfid($this->input->post('ref_rfid'));
-			if(count($result)){
+			//if(count($result) > 0 && $result){
+				if(!is_null($result)){
 
 				$log['student_ref_id'] = $result['id'];
 				$this->student_model->addLogStudent($result['student_no'],$log);	
 
 				$data['student'] = $result;
-				$data['error'] = "Welcome! You log at ".date('h:i A ');
+				$data['error'] = "Welcome! You logged at ".date('h:i A ');
 			}else{
 				$data['student']['firstname'] = "";
 				$data['student']['middlename'] = "";
@@ -47,7 +48,7 @@ class NeutralPage extends CI_Controller {
 				$data['student']['student_no'] = "";
 				$data['student']['name'] = "";
 				$data['student']['id_image'] = "pexels-photo-220453.png";
-				$data['error'] = "Card not registered. Please contact administrator.";
+				$data['error'] = "Unregistered card. Please contact administrator.";
 			}
 
 			

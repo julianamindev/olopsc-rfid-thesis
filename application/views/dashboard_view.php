@@ -91,7 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <th scope="col">Student No.</th>
                         <th scope="col">Name</th>
                         <th scope="col">Course</th>
-                        <th scope="col">Yr Level</th>
+                        <th scope="col">Year Level</th>
                         <!-- <th scope="col">Status</th> -->
                         <th scope="col"></th>
                       </tr>

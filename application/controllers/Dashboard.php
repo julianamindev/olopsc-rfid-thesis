@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
+define("ERR_STUD_REGISTERED", "Student number is already registered.");
 class Dashboard extends CI_Controller {
 
 	/**
@@ -90,7 +90,7 @@ class Dashboard extends CI_Controller {
 				$rfiddate['status'] = 1;
 				$this->rfid_model->updateRfid($this->input->post('rfid_number'),$rfiddate);
 			}else{
-			    $data['msg'] = "<span style='color:red'>Error! Student no. is already registered.</span>";
+			    $data['msg'] = "<span style='color:red'>" . constant("ERR_STUD_REGISTERED") . "</span>";
 			}	
 				
 		}
@@ -184,7 +184,7 @@ class Dashboard extends CI_Controller {
 
 
 			}else{
-			    $data['msg'] = "<span style='color:red'>Error! Student no. is already registered.</span>";
+			    $data['msg'] = "<span style='color:red'>" . constant("ERR_STUD_REGISTERED") . "</span>";
 			}	
 				
 		}
@@ -289,7 +289,7 @@ class Dashboard extends CI_Controller {
 
 			if($result){
 
-				$data['msg'] = "<span style='color:#4c9447'>Password successfully restore.</span>";
+				$data['msg'] = "<span style='color:#4c9447'>Password successfully restored!</span>";
 				$data['form'] = $this->student_model->getStudentById($this->input->post('id'));	
 
 			}else{

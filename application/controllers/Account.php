@@ -97,7 +97,7 @@ class Account extends CI_Controller {
 				$this->session->set_userdata($resultuser);
 				$sessiondata = $this->getSessionData();
 				
-				$data['msg'] = "<span style='color:#4c9447'>Successfully save!</span>";
+				$data['msg'] = "<span style='color:#4c9447'>Successfully saved!</span>";
 
 			}else{
 			    $data['msg'] = "<span style='color:red'>Error, Administrator cannot be save!</span>";

@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Username</th>
-                        <th scope="col">Fullname</th>
+                        <th scope="col">Full Name</th>
                         <th scope="col"></th>
                       </tr>
                     </thead>

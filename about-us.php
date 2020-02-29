@@ -12,9 +12,10 @@
                     This system can serve as a helping hand to monitor the safety of those students who enter the premises of the school.<br><br>
                     The history of each students log activity will be synchronised with the given website that can viewed by parents and guardian.</p>
                     
+                    <small>version 1.0.0</small>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
