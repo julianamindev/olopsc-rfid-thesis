@@ -62,9 +62,9 @@ class Rfid extends CI_Controller {
 			$result = $this->rfid_model->addRfid($formdata);
 
 			if($result){
-				$data['msg'] = "<span style='color:#4c9447'>Rfid successfully added!</span>";
+				$data['msg'] = "<span style='color:#4c9447'>RFID saved!</span>";
 			}else{
-				$data['msg'] = "<span style='color:red'>Error! Rfid already registered.</span>";
+				$data['msg'] = "<span style='color:red'>RFID is already registered!</span>";
 			}	
 				
 		}
@@ -104,10 +104,10 @@ class Rfid extends CI_Controller {
 			$result = $this->rfid_model->deleteRfidByNo($ref_rfid);
 
 			if($result){
-				$data['msg'] = "<span style='color:#4c9447'>Rfid successfully added!</span>";
+				$data['msg'] = "<span style='color:#4c9447'>RFID saved!</span>";
 				redirect('/rfid');
 			}else{
-				$data['msg'] = "<span style='color:red'>Error! Rfid already registered.</span>";
+				$data['msg'] = "<span style='color:red'>RFID is still assigned to a student!</span>";
 			}	
 				
 		}
