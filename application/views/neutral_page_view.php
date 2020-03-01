@@ -26,9 +26,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <?php }?>
         <div class="card mt-0  mb-0 px-2 text-center col-2 text-center">
-            <!-- <img src="<?php echo base_url();?>assets/img/<?php echo $student['id_image'];?>" alt="" class="mb-3 img-fluid mx-auto" style="width: 120px;height:120px"> -->
+            <img src="<?php echo base_url();?>assets/img/<?php echo $student['id_image'];?>" alt="" class="mb-3 img-fluid mx-auto" style="width: 120px;height:120px">
             
-            <img src="https://images.pexels.com/photos/3768163/pexels-photo-3768163.jpeg?cs=srgb&dl=woman-closing-her-eyes-3768163.jpg&fm=jpg" class="mb-3 img-fluid mx-auto" style="width: 120px;height:120px">
+            <!-- <img src="https://images.pexels.com/photos/3768163/pexels-photo-3768163.jpeg?cs=srgb&dl=woman-closing-her-eyes-3768163.jpg&fm=jpg" class="mb-3 img-fluid mx-auto" style="width: 120px;height:120px"> -->
            
             <section>
                 <h5 class="text-primary mb-2 pb-0"><?php echo $student['firstname']." ".$student['middlename']." ".$student['lastname'];?></h5>
