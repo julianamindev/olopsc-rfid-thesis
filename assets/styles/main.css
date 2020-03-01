@@ -196,3 +196,11 @@ width: 100%;
     background-size: 100%;
     background-position: center;
 }
+
+.login-container {
+    height: 100vh;
+    background: url('../img/le-background.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}

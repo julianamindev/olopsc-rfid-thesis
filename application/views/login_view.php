@@ -2,12 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <?php echo $header;?>
-<nav class="fixed-top d-flex p-3" style="align-items: center;">
+<nav class="d-flex p-3" style="align-items: center;background: transparent!important;position: absolute;">
         <img src="<?php echo base_url();?>assets/img/olopsc logo.png" alt="" style="height: 60px;width: auto;">
         <p class="navbar-brand text-primary mb-0 ml-3" href="#">OLOPSC RFID System</p>
     </nav>
-    <main class="login-container">
-        <div class="card login-card">
+    <main class="login-container" style="padding-top: 200px;">
+        <div class="card login-card" style="margin-top: 0px;">
             <div class="form-header">
                 <h1 class="text-primary form-title mb-0 pb-0">Welcome</h1>
             </div>
