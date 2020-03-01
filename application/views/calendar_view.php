@@ -4,8 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php echo $header; ?>
 <?php include('about-us.php'); ?>
 
-    <div class="dashboard-container mx-auto mb-5">
- 
+    <div class="dashboard-container mx-auto mb-0">
         <!-- <div class=" search-bar my-5 ">
             <form>
                 <div class="input-group">
@@ -27,13 +26,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             <div class="mx-3">
-                <div class="card-dashboard p-5">
+                <div class="card-dashboard p-2">
                     <div id='calendar'></div>
                 </div>
             </div>
             <div id="log" class="w-100 text-center">
-                <div id="log-area">
-
+                <div id="log-area" class="card p-0 mt-0" >
+                    <table class='logtable'style="height: 200px;border: 1px solid black">
+                        <tr><td>Time log</td></tr>
+                        <tr><td>Time log</td></tr>
+                        <tr><td>Time log</td></tr>
+                        <tr><td>Time log</td></tr>
+                        <tr><td>Time log</td></tr>
+                        <tr><td>Time log</td></tr>
+                        <tr><td>Time log</td></tr>
+                        <tr><td>Time log</td></tr>
+                        <tr><td>Time log</td></tr>
+                        <tr><td>Time log</td></tr>
+                        <tr><td>Time log</td></tr>
+                        <tr><td>Time log</td></tr>
+                        <tr><td>Time log</td></tr>
+                    </table>
                 </div>
             </div>
         </div>
@@ -53,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendar = new FullCalendar.Calendar(calendarEl, {
     plugins: [ 'dayGrid', 'interaction' ],  // interaction plugin must be specified
     selectable: true,  
+    height: 500,
     select: function(info) {
     }, 
         dateClick: function(info) {
@@ -60,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         },
   });
-
 
   function getlog(d){
                   //alert('Clicked on: ' + info.dateStr);

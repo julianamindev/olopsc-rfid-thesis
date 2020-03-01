@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </li>
                     <li class="nav-item dropdown"> 
                     <a class="nav-link dropdown-toggle d-flex align-items-center " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div style="height: 28px; width: 28px;background: #808D93; margin-right: 8px;border-radius: 50%;"></div>
+                        <div style="height: 28px; width: 28px; margin-right: 8px;border-radius: 50%;"></div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#" data-toggle="modal" data-target="#aboutUs">About</a>
