@@ -53,27 +53,25 @@ class Calendar extends CI_Controller {
 		$result = $this->student_model->getStudentLog($this->input->post('date'),$this->input->post('sid'));
 
 
-		$html = "<div class='logtable'>";
-		$html .= "<div><td>Time log</div>";
+		$html = "<table class='logtable' style='max-height: 450px;overflow: auto;'> <tr><td><table style='width: 100%'> ";
+		$html .= "<tr><td>Time log</td></tr>";
 		
 
 		if(count($result) > 0){
 
-
-
 			foreach($result as $log){
 
-				$html .= "<div><div>".date('h:i A ', strtotime($log['time_in']))."</div></div>";
+				$html .= "<tr><td>".date('h:i A ', strtotime($log['time_in']))."</td></tr>";
 					
 			}
 		
 		}else{
 
-			$html .= "<div><div colspan='2'>No time log found.</div></div>";
+			$html .= "<tr><td colspan='2'>No time log found.</td></tr>";
 
 		}
 
-		$html .= "</table>";
+		$html .= "</tr></td></table></table>";
 
 
 

@@ -31,22 +31,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             <div id="log" class="w-100 text-center">
-                <div id="log-area" class="card p-0 mt-0" >
-                    <table class='logtable'style="height: 200px;border: 1px solid black">
-                        <tr><td>Time log</td></tr>
-                        <tr><td>Time log</td></tr>
-                        <tr><td>Time log</td></tr>
-                        <tr><td>Time log</td></tr>
-                        <tr><td>Time log</td></tr>
-                        <tr><td>Time log</td></tr>
-                        <tr><td>Time log</td></tr>
-                        <tr><td>Time log</td></tr>
-                        <tr><td>Time log</td></tr>
-                        <tr><td>Time log</td></tr>
-                        <tr><td>Time log</td></tr>
-                        <tr><td>Time log</td></tr>
-                        <tr><td>Time log</td></tr>
-                    </table>
+                <div id="log-area" class="card p-0 mt-0" style="max-height: 450px;overflow: auto;" >
+                    <!-- <table class='logtable' style='max-height: 450px;overflow: auto;'>
+                         <tr>
+                            <td>
+                                <table style="width: 100%">
+
+                                         <tr><td>Time log</td></tr>
+                                        <tr><td>some time</td></tr>
+                                        <tr><td>some time</td></tr>
+                          <tr><td>some time</td></tr>
+                           <tr><td>some time</td></tr>
+                            <tr><td>some time</td></tr>
+                             <tr><td>some time</td></tr>
+                              <tr><td>some time</td></tr>
+                               <tr><td>some time</td></tr>
+                                <tr><td>some time</td></tr>
+                                 <tr><td>some time</td></tr>
+                                  <tr><td>some time</td></tr>
+
+                                </table>
+                            </td>
+                         </tr>
+
+                    <table> -->
                 </div>
             </div>
         </div>
