@@ -53,13 +53,11 @@ class Calendar extends CI_Controller {
 		$result = $this->student_model->getStudentLog($this->input->post('date'),$this->input->post('sid'));
 
 
-		$html = "<table border='1' class='logtable'>";
+		$html = "<table class='logtable' style='max-height: 450px;overflow: auto;'> <tr><td><table style='width: 100%'> ";
 		$html .= "<tr><td>Time log</td></tr>";
 		
 
 		if(count($result) > 0){
-
-
 
 			foreach($result as $log){
 
@@ -73,7 +71,7 @@ class Calendar extends CI_Controller {
 
 		}
 
-		$html .= "</table>";
+		$html .= "</tr></td></table></table>";
 
 
 

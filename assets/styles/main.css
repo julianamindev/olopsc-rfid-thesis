@@ -186,3 +186,13 @@ width: 100%;
     padding: 7px 7px;
 }
 .logtable tr:nth-child(even) {background-color: #cce5ff;}
+.fc-left h2 {
+    font-size: 18px!important;
+}
+
+.neutral {
+    background: url('../img/le-background.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
