@@ -1,7 +1,7 @@
 DirectoryIndex index.php
 
 <IfModule mod_rewrite.c>
-  RewriteBase /OLOPSC/
+  RewriteBase /RFID/
   RewriteEngine on
   RewriteCond $1 !^(index\.php|resources|gallery|json|slider|robots\.txt)
   RewriteCond %{REQUEST_FILENAME} !-f

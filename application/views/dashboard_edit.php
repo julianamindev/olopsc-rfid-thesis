@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                   </div>
                                   <div class="form-group">
                                   <label for="fname">Middle Name</label>
-                                      <input type="text" class="form-control" placeholder="Middle Name" name="middlename"  value="<?php echo $form[0]['middlename']; ?>"  required>
+                                      <input type="text" class="form-control" placeholder="Middle Name" name="middlename"  value="<?php echo $form[0]['middlename']; ?>">
                                   </div>
                                   <div class="form-group">
                                   <label for="fname">Last Name</label>

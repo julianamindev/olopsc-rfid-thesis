@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <input type="text" class="form-control" placeholder="First Name" name="firstname" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Middle Name" name="middlename" required>
+                            <input type="text" class="form-control" placeholder="Middle Name" name="middlename">
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Last Name" name="lastname" required> 
