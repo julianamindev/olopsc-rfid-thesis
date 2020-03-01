@@ -189,3 +189,10 @@ width: 100%;
 .fc-left h2 {
     font-size: 18px!important;
 }
+
+.neutral {
+    background: url('../img/le-background.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
